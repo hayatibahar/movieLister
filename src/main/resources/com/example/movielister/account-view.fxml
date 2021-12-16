@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="602.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.HomePageController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="56.0" stroke="WHITE" strokeType="INSIDE" width="602.0" />
+        <Label layoutX="12.0" layoutY="11.0" text="Movie Lister" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="30.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="344.0" layoutX="428.0" layoutY="57.0" stroke="WHITE" strokeType="OUTSIDE" width="173.0" />
+        <Line endX="100.0" layoutX="500.0" layoutY="303.0" startX="-73.99996948242188" stroke="WHITE" />
+        <Line endX="2.800018310546875" endY="56.0000114440918" layoutX="424.0" layoutY="-1.0" startX="2.800018310546875" startY="-3.051757857974735E-6" stroke="WHITE" />
+      <Button layoutX="465.0" layoutY="343.0" mnemonicParsing="false" text="homepage dön" />
+      <Button layoutX="487.0" layoutY="96.0" mnemonicParsing="false" text="hesap" />
+      <Button layoutX="476.0" layoutY="165.0" mnemonicParsing="false" text="izlediklerim" />
+      <Button layoutX="469.0" layoutY="229.0" mnemonicParsing="false" text="izleyeceklerim" />
+    </children>
+</AnchorPane>
