@@ -10,8 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="266.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="266.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.LoginController">
    <children>
       <Label layoutX="23.0" layoutY="184.0" text="Password" textFill="WHITE">
          <font>
@@ -29,14 +28,14 @@
          </font>
       </Label>
       <Line endX="165.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="113.0" startX="-100.0" stroke="WHITE" />
-      <TextField layoutX="24.0" layoutY="149.0" prefHeight="26.0" prefWidth="220.0" />
+      <TextField fx:id="tf_loginNickname" layoutX="24.0" layoutY="149.0" prefHeight="26.0" prefWidth="220.0" />
       <Label layoutX="23.0" layoutY="130.0" text="Nickname" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Label>
-      <PasswordField layoutX="23.0" layoutY="203.0" prefHeight="26.0" prefWidth="220.0" />
-      <Button layoutX="191.0" layoutY="246.0" mnemonicParsing="false" text="Sign In" textAlignment="CENTER" />
+      <PasswordField fx:id="pf_loginPassword" layoutX="23.0" layoutY="203.0" prefHeight="26.0" prefWidth="220.0" />
+      <Button layoutX="191.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#loginControl" text="Sign In" textAlignment="CENTER" />
       <HBox alignment="CENTER" layoutX="27.0" layoutY="300.0" prefHeight="19.0" prefWidth="220.0">
          <children>
             <Line endX="90.0" stroke="WHITE" />
@@ -51,6 +50,6 @@
             <Line endX="90.0" stroke="WHITE" />
          </children>
       </HBox>
-      <Button layoutX="108.0" layoutY="336.0" mnemonicParsing="false" text="Sign Up" textAlignment="CENTER" />
+      <Button layoutX="108.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#openSignUpScene" text="Sign Up" textAlignment="CENTER" />
    </children>
 </AnchorPane>
