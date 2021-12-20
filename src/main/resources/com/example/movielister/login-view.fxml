@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="266.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="266.0" style="-fx-background-color: #121212;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.LoginController">
    <children>
       <Label layoutX="23.0" layoutY="184.0" text="Password" textFill="WHITE">
          <font>
@@ -35,7 +35,7 @@
          </font>
       </Label>
       <PasswordField fx:id="pf_loginPassword" layoutX="23.0" layoutY="203.0" prefHeight="26.0" prefWidth="220.0" />
-      <Button layoutX="191.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#loginControl" text="Sign In" textAlignment="CENTER" />
+      <Button layoutX="191.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#loginControl" styleClass="button2" stylesheets="@main.css" text="Sign In" textAlignment="CENTER" />
       <HBox alignment="CENTER" layoutX="27.0" layoutY="300.0" prefHeight="19.0" prefWidth="220.0">
          <children>
             <Line endX="90.0" stroke="WHITE" />
@@ -50,6 +50,6 @@
             <Line endX="90.0" stroke="WHITE" />
          </children>
       </HBox>
-      <Button layoutX="108.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#openSignUpScene" text="Sign Up" textAlignment="CENTER" />
+      <Button layoutX="108.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#openSignUpScene" styleClass="button2" stylesheets="@main.css" text="Sign Up" textAlignment="CENTER" />
    </children>
 </AnchorPane>
