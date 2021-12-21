@@ -1,6 +1,7 @@
 package com.example.movielister.Controller;
 
-import com.example.movielister.Data.MovieDatabase;
+import com.example.movielister.Data.Manager.MovieManager;
+import com.example.movielister.Data.Repository.MovieRepository;
 import com.example.movielister.Model.Movie;
 import com.example.movielister.MovieListerApplication;
 import com.example.movielister.util.RecyclerView;
@@ -27,9 +28,10 @@ public class HomePageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        MovieManager movieManager = new MovieManager(new MovieRepository());
         Adapter adapter = new Adapter();
         items.setAdapter(adapter);
-        items.getItems().addAll(MovieDatabase.getAllMovie());
+        items.getItems().addAll(movieManager.getAllMovie());
     }
 
 
@@ -56,9 +58,6 @@ public class HomePageController implements Initializable {
             holder.lbl_year.setText(String.valueOf(movie.getYEAR()));
             Image img = new Image(movie.getPOSTER());
             holder.iv_poster.setImage(img);
-//            holder.poster.setFitWidth(300);
-//            holder.poster.setFitHeight(400);
-//            holder.poster.setPreserveRatio(true);
         }
 
         public static class Holder extends RecyclerView.ViewHolder {

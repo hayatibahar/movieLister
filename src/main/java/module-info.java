@@ -6,6 +6,7 @@ module com.example.movielister {
     requires org.kordamp.bootstrapfx.core;
     requires javafx.graphics;
     requires java.sql;
+    requires java.sql.rowset;
 
     opens com.example.movielister to javafx.fxml;
     exports com.example.movielister;
@@ -13,7 +14,5 @@ module com.example.movielister {
     opens com.example.movielister.Controller to javafx.fxml;
     opens com.example.movielister.Model to javafx.base;
     opens com.example.movielister.util to javafx.fxml;
-
-
 
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import com.example.movielister.util.RecyclerView?>
-<AnchorPane fx:id="ap_homePage" prefHeight="506.0" prefWidth="800.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.HomePageController">
+<AnchorPane fx:id="ap_homePage" prefHeight="506.0" prefWidth="800.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.HomePageController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="56.0" stroke="WHITE" strokeType="INSIDE" width="626.0" />
       <Label layoutX="12.0" layoutY="11.0" text="Movie Lister" textFill="WHITE">
