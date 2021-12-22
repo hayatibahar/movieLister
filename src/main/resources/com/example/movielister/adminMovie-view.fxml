@@ -1,14 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.movielister.Controller.AdminMovieController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="730.0" prefWidth="800.0"
+            style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/17"
+            fx:controller="com.example.movielister.Controller.AdminMovieController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT"/>
+   </cursor>
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE"
+                 strokeWidth="3.0" width="800.0"/>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="748.0" stroke="WHITE" strokeType="INSIDE"
+                 strokeWidth="3.0" width="280.0"/>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="694.0" layoutX="277.0" layoutY="54.0"
+                 stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="523.0"/>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="471.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="DB" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="86.0"/>
+         </font>
+      </Text>
+      <Label layoutX="26.0" layoutY="5.0" text="Movie Lister" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="44.0"/>
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="478.0" layoutY="16.0" text="Movie Panel" textAlignment="CENTER"
+             textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="24.0"/>
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="63.0" text="Admin Panel" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="24.0"/>
+         </font>
+      </Label>
+      <Line endX="153.0" layoutX="113.0" layoutY="91.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0"/>
+      <TextField layoutX="13.0" layoutY="102.0" prefHeight="25.0" prefWidth="254.0" promptText="Movie Title"/>
+      <TextField layoutX="13.0" layoutY="144.0" prefHeight="25.0" prefWidth="254.0" promptText="Movie Year"/>
+      <TextField layoutX="13.0" layoutY="186.0" prefHeight="25.0" prefWidth="254.0" promptText="Released"/>
+      <TextField layoutX="13.0" layoutY="228.0" prefHeight="25.0" prefWidth="254.0" promptText="Runtime"/>
+      <TextField layoutX="13.0" layoutY="270.0" prefHeight="25.0" prefWidth="254.0" promptText="Genre"/>
+      <TextField layoutX="13.0" layoutY="312.0" prefHeight="25.0" prefWidth="254.0" promptText="DirectorID"/>
+      <TextField layoutX="13.0" layoutY="354.0" prefHeight="25.0" prefWidth="254.0" promptText="Plot"/>
+      <TextField layoutX="13.0" layoutY="438.0" prefHeight="25.0" prefWidth="254.0" promptText="Awards"/>
+      <TextField layoutX="13.0" layoutY="396.0" prefHeight="25.0" prefWidth="254.0" promptText="Country Id"/>
+      <TextField layoutX="13.0" layoutY="606.0" prefHeight="25.0" prefWidth="254.0" promptText="CommentCount"/>
+      <TextField layoutX="13.0" layoutY="564.0" prefHeight="25.0" prefWidth="254.0" promptText="RateCount"/>
+      <TextField layoutX="13.0" layoutY="522.0" prefHeight="25.0" prefWidth="254.0" promptText="Rate"/>
+      <TextField layoutX="13.0" layoutY="480.0" prefHeight="25.0" prefWidth="254.0" promptText="Poster"/>
+      <Button layoutX="99.0" layoutY="649.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="Update"/>
+      <Button layoutX="184.0" layoutY="649.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="Delete"/>
+      <Button layoutX="14.0" layoutY="649.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" text="Add"/>
+      <Button layoutX="58.0" layoutY="695.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0"
+              text="Home Page"/>
+      <Button layoutX="143.0" layoutY="695.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0"
+              text="Admin Page"/>
+   </children>
 </AnchorPane>
