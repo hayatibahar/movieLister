@@ -8,48 +8,61 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="266.0" style="-fx-background-color: #121212;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="273.0" style="-fx-background-color: #121212;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.LoginController">
    <children>
-      <Label layoutX="23.0" layoutY="184.0" text="Password" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="2.0" layoutY="2.0" stroke="WHITE" strokeWidth="3.0" width="269.0" />
+      <Label layoutX="25.0" layoutY="186.0" text="Password" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="49.0" layoutY="14.0" text="Welcome" textFill="WHITE">
+      <Label layoutX="51.0" layoutY="16.0" text="Welcome" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="44.0" />
          </font>
       </Label>
-      <Label layoutX="19.0" layoutY="64.0" text="Movie Lister" textFill="WHITE">
+      <Label layoutX="21.0" layoutY="66.0" text="Movie Lister" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="44.0" />
          </font>
       </Label>
-      <Line endX="165.0" endY="-1.52587890625E-5" layoutX="101.0" layoutY="113.0" startX="-100.0" stroke="WHITE" />
-      <TextField fx:id="tf_loginNickname" layoutX="24.0" layoutY="149.0" prefHeight="26.0" prefWidth="220.0" />
-      <Label layoutX="23.0" layoutY="130.0" text="Nickname" textFill="WHITE">
+      <Line endX="165.0" endY="-1.52587890625E-5" layoutX="103.0" layoutY="115.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+      <TextField fx:id="tf_loginNickname" layoutX="26.0" layoutY="151.0" prefHeight="26.0" prefWidth="220.0" />
+      <Label layoutX="25.0" layoutY="132.0" text="Nickname" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="pf_loginPassword" layoutX="23.0" layoutY="203.0" prefHeight="26.0" prefWidth="220.0" />
-      <Button layoutX="191.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#loginControl" styleClass="button2" stylesheets="@main.css" text="Sign In" textAlignment="CENTER" />
-      <HBox alignment="CENTER" layoutX="27.0" layoutY="300.0" prefHeight="19.0" prefWidth="220.0">
+      <PasswordField fx:id="pf_loginPassword" layoutX="25.0" layoutY="205.0" prefHeight="26.0" prefWidth="220.0" />
+      <Button layoutX="168.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#loginControl" prefHeight="35.0" prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Sign In" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font></Button>
+      <HBox alignment="CENTER" layoutX="29.0" layoutY="302.0" prefHeight="19.0" prefWidth="220.0">
          <children>
-            <Line endX="90.0" stroke="WHITE" />
-            <Label text="Or" textFill="WHITE">
+            <Line endX="90.0" stroke="WHITE" strokeWidth="3.0" />
+            <Label alignment="CENTER" contentDisplay="TEXT_ONLY" text="Or" textFill="WHITE">
                <font>
-                  <Font name="Times New Roman" size="16.0" />
+                  <Font name="Times New Roman Bold" size="16.0" />
                </font>
                <HBox.margin>
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Label>
-            <Line endX="90.0" stroke="WHITE" />
+            <Line endX="90.0" stroke="WHITE" strokeWidth="3.0" />
          </children>
       </HBox>
-      <Button layoutX="108.0" layoutY="336.0" mnemonicParsing="false" onMouseClicked="#openSignUpScene" styleClass="button2" stylesheets="@main.css" text="Sign Up" textAlignment="CENTER" />
+      <Button layoutX="168.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#openSignUpScene" prefHeight="35.0" prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Sign Up" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="29.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#loginControl" prefHeight="35.0" prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Exit" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
