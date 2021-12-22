@@ -1,6 +1,6 @@
 package com.example.movielister.Model;
 
-public class Rate {
+public class Rate implements IEntity {
     int rateID;
     int userID;
     int movieID;

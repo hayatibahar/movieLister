@@ -9,5 +9,5 @@ public interface Dao<T extends IEntity> {
     void update(T t);
     void delete(T t);
     void deleteAll();
-    T getById(T t);
+    T getById(int id);
 }

@@ -11,12 +11,12 @@ import java.sql.ResultSet;
 public class MovieRepository implements Dao<Movie> {
     @Override
     public ObservableList<Movie> getAll() {
-        ObservableList<Movie> movie = FXCollections.observableArrayList();
+        ObservableList<Movie> movies = FXCollections.observableArrayList();
         String query = "SELECT * FROM movie_tbl";
         ResultSet resultSet = DBUtil.dbExecuteQuery(query);
         try {
             while (resultSet.next()) {
-                movie.add(new Movie(
+                movies.add(new Movie(
                         resultSet.getInt(1),
                         resultSet.getString(2),
                         resultSet.getInt(3),
@@ -36,14 +36,15 @@ public class MovieRepository implements Dao<Movie> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return movie;
+        return movies;
     }
 
     @Override
     public void insert(Movie movie) {
-        String query = String.format("Insert into movie_tbl " +
-                        "(title,movieYear,released,runtime,genre,directorID,plot,countryID,awards,poster,rate,ratecount,commentcount) " +
-                        "values (%s,%d,%s,%s,%s,%d,%s,%d,%s,%s,%f,%d,%d)",
+        String query = String.format("INSERT INTO movie_tbl " +
+                        "(title,movieYear,released,runtime,genre,directorID,plot,countryID,awards," +
+                        "poster,rate,ratecount,commentcount) " +
+                        "values ('%s',%d,'%s','%s','%s',%d,'%s',%d,'%s','%s',%f,%d,%d)",
                 movie.getTITLE(), movie.getYEAR(), movie.getRELEASED(), movie.getRUNTIME(), movie.getGENRE(),
                 movie.getDIRECTORID(), movie.getPLOT(), movie.getCOUNTRYID(), movie.getAWARDS(), movie.getPOSTER(), movie.getRATE(),
                 movie.getRATECOUNT(), movie.getCOMMENTCOUNT());
@@ -54,31 +55,36 @@ public class MovieRepository implements Dao<Movie> {
     @Override
     public void update(Movie movie) {
         String query = String.format("UPDATE movie_tbl SET " +
-                        "title = %s, movieYear = %d,released = %s,runtime = %s,genre = %s,directorID = %d,plot = %s,countryID = %d,awards = %s,poster = %s,rate = %f,ratecount = %d,commentcount = %d",
+                        "title = '%s', movieYear = %d,released = '%s',runtime = '%s',genre = '%s'," +
+                        "directorID = %d,plot = '%s',countryID = %d,awards = '%s',poster = '%s'," +
+                        "rate = %f,ratecount = %d,commentcount = %d WHERE movieID = %d",
                 movie.getTITLE(), movie.getYEAR(), movie.getRELEASED(), movie.getRUNTIME(), movie.getGENRE(),
                 movie.getDIRECTORID(), movie.getPLOT(), movie.getCOUNTRYID(), movie.getAWARDS(), movie.getPOSTER(), movie.getRATE(),
-                movie.getRATECOUNT(), movie.getCOMMENTCOUNT());
+                movie.getRATECOUNT(), movie.getCOMMENTCOUNT(),movie.getFILM_ID());
+
         DBUtil.dbExecuteUpdate(query);
     }
 
     @Override
     public void delete(Movie movie) {
         String query = String.format("DELETE FROM movie_tbl WHERE movieID = %d ",movie.getFILM_ID());
+
         DBUtil.dbExecuteUpdate(query);
     }
 
     @Override
     public void deleteAll() {
         String query = "DELETE FROM movie_tbl";
+
         DBUtil.dbExecuteUpdate(query);
     }
 
     @Override
-    public Movie getById(Movie movie) {
-        String query = String.format("SELECT * FROM movie_tbl WHERE movieID = %d ",movie.getFILM_ID());
+    public Movie getById(int id) {
+        String query = String.format("SELECT * FROM movie_tbl WHERE movieID = %d ",id);
         ResultSet resultSet = DBUtil.dbExecuteQuery(query);
         try {
-            while (resultSet.next()) {
+            if (resultSet.next()) {
                 return (new Movie(
                         resultSet.getInt(1),
                         resultSet.getString(2),
@@ -101,4 +107,5 @@ public class MovieRepository implements Dao<Movie> {
         }
         return null;
     }
+
 }

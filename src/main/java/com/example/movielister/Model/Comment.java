@@ -1,6 +1,6 @@
 package com.example.movielister.Model;
 
-public class Comment {
+public class Comment implements IEntity{
     int commentID;
     int userID;
     int movieID;

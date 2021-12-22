@@ -1,5 +1,12 @@
 package com.example.movielister.Controller;
 
+import com.example.movielister.Data.Manager.UserManager;
+import com.example.movielister.Data.Manager.UserTypeManager;
+import com.example.movielister.Data.Repository.UserRepository;
+import com.example.movielister.Data.Repository.UserTypeRepository;
+import com.example.movielister.Model.User;
+import com.example.movielister.Model.UserType;
+import com.example.movielister.util.FXAlert;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -25,39 +32,26 @@ public class LoginController extends BaseController {
 
     @FXML
     void openSignUpScene(MouseEvent event) {
-        openStage(event,"signUp-view.fxml");
+        openStage(event, "signUp-view.fxml");
 
     }
 
     @FXML
     void loginControl(MouseEvent event) {
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "fghj852");
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select usertypeID from user_tbl where nickname ='"+tf_loginNickname.getText()+"' and pass ='"+pf_loginPassword.getText()+"'");
-            resultSet.next();
-
-            ResultSet resultSet2 = statement.executeQuery("select info from userType_tbl where userTypeId="+resultSet.getInt(1));
-            resultSet2.next();
-
-            if(resultSet2.getString(1).equals("user")){
-                openStage(event,"homePage-view.fxml");
-            }
-            else if(resultSet2.getString(1).equals("admin")){
-                openStage(event,"admin-view.fxml");
-
+        UserManager userManager = new UserManager(new UserRepository());
+        UserTypeManager userTypeManager = new UserTypeManager(new UserTypeRepository());
+        User user = userManager.auth(tf_loginNickname.getText(), pf_loginPassword.getText());
+        if (user!=null){
+            UserType userType = userTypeManager.getUserTypeById(user.getUserTypeID());
+            if (userType.getInfo().equals("user")) {
+                openStage(event, "homePage-view.fxml");
+            } else if (userType.getInfo().equals("admin")) {
+                openStage(event, "admin-view.fxml");
             }else{
-                System.out.println("Login ekranında ekran değişimi sırasında hata!");
+                FXAlert.showWarning("Yeni kullanıcı tipi için açılacak ekran koda eklenmemiş!");
             }
-            connection.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
 
-
     }
-
-
 
 }

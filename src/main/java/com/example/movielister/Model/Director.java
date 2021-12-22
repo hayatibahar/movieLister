@@ -1,6 +1,6 @@
 package com.example.movielister.Model;
 
-public class Director {
+public class Director implements IEntity {
     int directorID;
     String director;
 

@@ -1,6 +1,6 @@
 package com.example.movielister.Model;
 
-public class Country {
+public class Country implements IEntity {
     int countryID;
     String country;
 

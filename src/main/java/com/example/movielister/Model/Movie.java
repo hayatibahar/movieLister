@@ -1,7 +1,7 @@
 package com.example.movielister.Model;
 
 
-public class Movie implements IEntity  {
+public class Movie implements IEntity {
     int FILM_ID;
     String TITLE;
     int YEAR;

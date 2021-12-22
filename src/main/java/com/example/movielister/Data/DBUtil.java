@@ -1,5 +1,7 @@
 package com.example.movielister.Data;
 
+import com.example.movielister.util.FXAlert;
+
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetProvider;
 import java.sql.*;
@@ -15,8 +17,9 @@ public class DBUtil {
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException e) {
-            System.out.println("Where is your Oracle JDBC Driver?");
             e.printStackTrace();
+            FXAlert.showException(e, "JDBC Driver bağlantı sırasında hata!");
+
         }
 
         System.out.println("Oracle JDBC Driver Registered!");
@@ -24,7 +27,7 @@ public class DBUtil {
         try {
             conn = DriverManager.getConnection(connStr, user, password);
         } catch (SQLException e) {
-            System.out.println("Connection Failed! Check output console" + e);
+            FXAlert.showException(e, "Database connection sırasında hata!");
             e.printStackTrace();
         }
     }
@@ -36,6 +39,7 @@ public class DBUtil {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            FXAlert.showException(e, "Database disconnect sırasında hata!");
         }
 
     }
@@ -55,14 +59,16 @@ public class DBUtil {
             crs = RowSetProvider.newFactory().createCachedRowSet();
             crs.populate(resultSet);
         } catch (SQLException e) {
-            System.out.println("Problem occurred at executeQuery operation : " + e);
             e.printStackTrace();
+            FXAlert.showException(e, "Execute query sırasında hata!");
+
         } finally {
             if (resultSet != null) {
                 try {
                     resultSet.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
+                    FXAlert.showException(e, "Resultset kapatılırken hata!");
                 }
             }
             if (stmt != null) {
@@ -70,6 +76,7 @@ public class DBUtil {
                     stmt.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
+                    FXAlert.showException(e, "Statement kapatılırken hata!");
                 }
             }
             dbDisconnect();
@@ -82,17 +89,19 @@ public class DBUtil {
         Statement stmt = null;
         try {
             dbConnect();
+            System.out.println("Execute statement: " + sqlStmt + "\n");
             stmt = conn.createStatement();
             stmt.executeUpdate(sqlStmt);
         } catch (SQLException e) {
-            System.out.println("Problem occurred at executeUpdate operation : " + e);
             e.printStackTrace();
+            FXAlert.showException(e, "Execute update sırasında hata!");
         } finally {
             if (stmt != null) {
                 try {
                     stmt.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
+                    FXAlert.showException(e, "Statement kapatılırken hata!");
                 }
             }
             dbDisconnect();

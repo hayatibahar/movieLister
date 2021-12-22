@@ -1,6 +1,6 @@
 package com.example.movielister.Model;
 
-public class User {
+public class User implements IEntity {
     int userID;
     String nickname;
     String pass;

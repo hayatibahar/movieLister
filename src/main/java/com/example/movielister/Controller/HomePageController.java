@@ -51,13 +51,16 @@ public class HomePageController implements Initializable {
         @Override
         public void onBindViewHolder(Adapter.Holder holder, Object item) {
             Movie movie = (Movie) item;
-            System.out.println("holder : "+ movie.getTITLE());
             holder.lbl_movieTitle.setText(movie.getTITLE());
             holder.lbl_director.setText(String.valueOf(movie.getDIRECTORID()));
             holder.lbl_rate.setText(String.valueOf(movie.getRATE()));
             holder.lbl_year.setText(String.valueOf(movie.getYEAR()));
             Image img = new Image(movie.getPOSTER());
             holder.iv_poster.setImage(img);
+            // TODO FİLM YORUM EKRANI AÇILACAK
+            holder.getView().setOnMouseClicked(mouseEvent ->{
+
+            });
         }
 
         public static class Holder extends RecyclerView.ViewHolder {
