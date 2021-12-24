@@ -11,14 +11,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="892.0" prefWidth="800.0" style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AdminMovieController">
+<AnchorPane prefHeight="809.0" prefWidth="800.0" style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AdminMovieController">
     <cursor>
         <Cursor fx:constant="DEFAULT" />
     </cursor>
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="800.0" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="901.0" layoutY="-8.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="283.0" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="839.0" layoutX="280.0" layoutY="54.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="520.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="820.0" layoutY="-8.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="283.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="757.0" layoutX="280.0" layoutY="54.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="520.0" />
         <Label layoutX="26.0" layoutY="5.0" text="Movie Lister" textFill="WHITE">
             <font>
                 <Font name="Times New Roman" size="44.0" />
@@ -51,9 +51,8 @@
         <Button fx:id="btn_update" layoutX="99.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#updateMovie" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Update" />
         <Button fx:id="btn_delete" layoutX="184.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#deleteMovie" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Delete" />
         <Button fx:id="btn_add" layoutX="14.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#addMovie" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Add" />
-        <Button fx:id="btn_homePage" layoutX="48.0" layoutY="841.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Home Page" />
-        <Button fx:id="btn_adminPage" layoutX="143.0" layoutY="841.0" mnemonicParsing="false" onMouseClicked="#openAdminPageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Admin Page" />
-        <TableView fx:id="table_movie" layoutX="283.0" layoutY="57.0" prefHeight="833.0" prefWidth="513.0">
+        <Button fx:id="btn_adminPage" layoutX="101.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openAdminPageScene" prefHeight="26.0" prefWidth="76.0" styleClass="button2" stylesheets="@main.css" text="Admin P." />
+        <TableView fx:id="table_movie" layoutX="283.0" layoutY="57.0" prefHeight="751.0" prefWidth="513.0">
             <columns>
                 <TableColumn fx:id="id" prefWidth="75.0" text="MovieID" />
                 <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
@@ -87,8 +86,7 @@
       <Label layoutX="14.0" layoutY="520.0" text="Poster" textFill="WHITE" />
       <Label layoutX="16.0" layoutY="478.0" text="Awards" textFill="WHITE" />
       <Line endX="153.0" layoutX="114.0" layoutY="754.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
-      <Line endX="153.0" layoutX="116.0" layoutY="825.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
-      <Button fx:id="btn_homePage1" layoutX="15.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="Director Panel" />
-      <Button fx:id="btn_homePage11" layoutX="168.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="Country Panel" />
+      <Button fx:id="btn_homePage1" layoutX="15.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Director P." />
+      <Button fx:id="btn_homePage11" layoutX="184.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Country P." />
     </children>
 </AnchorPane>
