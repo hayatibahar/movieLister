@@ -9,7 +9,8 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="378.0" prefWidth="272.0" style="-fx-background-color: #121212;"
-            xmlns="http://javafx.com/javafx/17" fx:controller="com.example.movielister.Controller.AdminController">
+            styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17"
+            fx:controller="com.example.movielister.Controller.AdminController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="374.0" layoutX="2.0" layoutY="2.0" stroke="WHITE"
                    strokeWidth="3.0" width="269.0"/>
@@ -25,11 +26,11 @@
         </Label>
         <Line endX="165.0" endY="-1.52587890625E-5" layoutX="104.0" layoutY="120.0" startX="-100.0" stroke="WHITE"
               strokeWidth="3.0"/>
-        <Button layoutX="187.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#openLoginScene" text="Log Out"
-                textAlignment="CENTER"/>
+        <Button layoutX="187.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#openLoginScene"
+                styleClass="button2" stylesheets="@main.css" text="Log Out" textAlignment="CENTER"/>
         <Line endX="165.0" endY="-1.52587890625E-5" layoutX="104.0" layoutY="307.0" startX="-100.0" stroke="WHITE"
               strokeWidth="3.0"/>
-        <Label layoutX="26.0" layoutY="134.0" text="yönetici ad" textFill="WHITE">
+        <Label fx:id="lbl_nickname" layoutX="26.0" layoutY="134.0" textFill="WHITE">
             <font>
                 <Font name="Times New Roman" size="16.0"/>
             </font>
@@ -41,13 +42,13 @@
                 <Font name="Times New Roman" size="26.0"/>
             </font>
         </Label>
-        <Button layoutX="35.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#openAdminMovieScene"
-                text="Movie "/>
-        <Button layoutX="186.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#openAdminAccountScene"
-                text="Account"/>
-        <Button layoutX="98.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene"
-                text="Home Page"/>
-        <Button layoutX="102.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#openAdminCommentScene"
-                text="Comment"/>
+        <Button layoutX="27.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#openAdminMovieScene"
+                styleClass="button2" stylesheets="@main.css" text="Movie "/>
+        <Button layoutX="178.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#openAdminAccountScene"
+                styleClass="button2" stylesheets="@main.css" text="Account"/>
+        <Button layoutX="100.0" layoutY="259.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene"
+                styleClass="button2" stylesheets="@main.css" text="Home Page"/>
+        <Button layoutX="94.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#openAdminCommentScene"
+                styleClass="button2" stylesheets="@main.css" text="Comment"/>
     </children>
 </AnchorPane>

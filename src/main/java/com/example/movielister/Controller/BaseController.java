@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Screen;
@@ -15,10 +14,6 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 abstract class BaseController {
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
 
     @FXML
     void openStage(MouseEvent event, String fxml) {
@@ -33,11 +28,9 @@ abstract class BaseController {
             stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
             stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
             ((Node) (event.getSource())).getScene().getWindow().hide();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
 }

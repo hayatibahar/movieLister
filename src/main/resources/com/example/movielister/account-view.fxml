@@ -9,8 +9,8 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="424.0" prefWidth="608.0"
-            style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17"
-            fx:controller="com.example.movielister.Controller.HomePageController">
+            style="-fx-background-color: #000000;" styleClass="anchorPane" stylesheets="@main.css"
+            xmlns="http://javafx.com/javafx/17" fx:controller="com.example.movielister.Controller.AccountController">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="62.0" layoutY="-1.0" smooth="false"
                    stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="608.0"/>
@@ -36,24 +36,23 @@
                 <Font name="Times New Roman" size="16.0"/>
             </font>
         </Text>
-        <Text fill="WHITE" fontSmoothingType="LCD" layoutX="69.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0"
+        <Text fill="WHITE" fontSmoothingType="LCD" layoutX="68.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0"
               text="nickname" textAlignment="CENTER">
             <font>
                 <Font name="Times New Roman" size="16.0"/>
             </font>
         </Text>
         <Line endX="95.0" layoutX="102.0" layoutY="201.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0"/>
-        <Button layoutX="111.0" layoutY="385.0" mnemonicParsing="false" text="Home Page"/>
+        <Button layoutX="59.0" layoutY="384.0" mnemonicParsing="false" styleClass="button2" text="Home Page"/>
         <Line endX="95.0" layoutX="102.0" layoutY="371.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0"/>
-        <Button layoutX="51.0" layoutY="229.0" mnemonicParsing="false" text="Account Details"/>
-        <Button layoutX="66.0" layoutY="272.0" mnemonicParsing="false" text="Watch List"/>
-        <Button layoutX="58.0" layoutY="320.0" mnemonicParsing="false" text="Watched List"/>
+        <Button layoutX="46.0" layoutY="228.0" mnemonicParsing="false" styleClass="button2" text="Account Details"/>
+        <Button layoutX="61.0" layoutY="271.0" mnemonicParsing="false" styleClass="button2" text="Watch List"/>
+        <Button layoutX="53.0" layoutY="319.0" mnemonicParsing="false" styleClass="button2" text="Watched List"/>
         <Text fill="WHITE" fontSmoothingType="LCD" layoutX="336.0" layoutY="227.0" strokeType="OUTSIDE"
               strokeWidth="0.0" text="bişiler" textAlignment="CENTER">
             <font>
                 <Font name="Times New Roman" size="46.0"/>
             </font>
         </Text>
-        <Button layoutX="14.0" layoutY="385.0" mnemonicParsing="false" text="Log Out"/>
     </children>
 </AnchorPane>

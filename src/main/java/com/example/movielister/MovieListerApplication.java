@@ -15,7 +15,7 @@ public class MovieListerApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MovieListerApplication.class.getResource("login-view.fxml"));
         stage.initStyle(StageStyle.UNDECORATED);
-        Scene scene = new Scene(fxmlLoader.load(), 266, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 273, 404);
         stage.setScene(scene);
         stage.show();
 

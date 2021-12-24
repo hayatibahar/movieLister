@@ -8,12 +8,11 @@ import com.example.movielister.Model.User;
 import com.example.movielister.Model.UserType;
 import com.example.movielister.util.FXAlert;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-
-import java.sql.*;
 
 public class LoginController extends BaseController {
 
@@ -22,6 +21,9 @@ public class LoginController extends BaseController {
 
     @FXML
     private Button btn_signUp;
+
+    @FXML
+    private Button btn_exit;
 
     @FXML
     private PasswordField pf_loginPassword;
@@ -43,15 +45,21 @@ public class LoginController extends BaseController {
         User user = userManager.auth(tf_loginNickname.getText(), pf_loginPassword.getText());
         if (user!=null){
             UserType userType = userTypeManager.getUserTypeById(user.getUserTypeID());
+            DataPassController.user = user;
             if (userType.getInfo().equals("user")) {
                 openStage(event, "homePage-view.fxml");
             } else if (userType.getInfo().equals("admin")) {
                 openStage(event, "admin-view.fxml");
-            }else{
+            } else {
                 FXAlert.showWarning("Yeni kullanıcı tipi için açılacak ekran koda eklenmemiş!");
             }
         }
 
+    }
+
+    @FXML
+    void exit(MouseEvent event) {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
 }

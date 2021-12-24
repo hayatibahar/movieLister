@@ -13,67 +13,68 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="404.0" prefWidth="273.0" style="-fx-background-color: #121212;"
-            stylesheets="@main.css" xmlns="http://javafx.com/javafx/17"
+            stylesheets="@main.css" xmlns="http://javafx.com/javafx/16"
             fx:controller="com.example.movielister.Controller.LoginController">
-   <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="2.0" layoutY="2.0" stroke="WHITE"
-                 strokeWidth="3.0" width="269.0"/>
-      <Label layoutX="25.0" layoutY="186.0" text="Password" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman" size="16.0"/>
-         </font>
-      </Label>
-      <Label layoutX="51.0" layoutY="16.0" text="Welcome" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman" size="44.0"/>
-         </font>
-      </Label>
-      <Label layoutX="21.0" layoutY="66.0" text="Movie Lister" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman" size="44.0"/>
-         </font>
-      </Label>
-      <Line endX="165.0" endY="-1.52587890625E-5" layoutX="103.0" layoutY="115.0" startX="-100.0" stroke="WHITE"
-            strokeWidth="3.0"/>
-      <TextField fx:id="tf_loginNickname" layoutX="26.0" layoutY="151.0" prefHeight="26.0" prefWidth="220.0"/>
-      <Label layoutX="25.0" layoutY="132.0" text="Nickname" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman" size="16.0"/>
-         </font>
-      </Label>
-      <PasswordField fx:id="pf_loginPassword" layoutX="25.0" layoutY="205.0" prefHeight="26.0" prefWidth="220.0"/>
-      <Button layoutX="168.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#loginControl" prefHeight="35.0"
-              prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Sign In" textAlignment="CENTER">
-         <font>
-            <Font name="Times New Roman Bold" size="14.0"/>
-         </font>
-      </Button>
-      <HBox alignment="CENTER" layoutX="29.0" layoutY="302.0" prefHeight="19.0" prefWidth="220.0">
-         <children>
-            <Line endX="90.0" stroke="WHITE" strokeWidth="3.0"/>
-            <Label alignment="CENTER" contentDisplay="TEXT_ONLY" text="Or" textFill="WHITE">
-               <font>
-                  <Font name="Times New Roman Bold" size="16.0"/>
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="2.0" layoutY="2.0" stroke="WHITE"
+                   strokeWidth="3.0" width="269.0"/>
+        <Label layoutX="25.0" layoutY="186.0" text="Password" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="16.0"/>
+            </font>
+        </Label>
+        <Label layoutX="51.0" layoutY="16.0" text="Welcome" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="44.0"/>
+            </font>
+        </Label>
+        <Label layoutX="21.0" layoutY="66.0" text="Movie Lister" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="44.0"/>
+            </font>
+        </Label>
+        <Line endX="165.0" endY="-1.52587890625E-5" layoutX="103.0" layoutY="115.0" startX="-100.0" stroke="WHITE"
+              strokeWidth="3.0"/>
+        <TextField fx:id="tf_loginNickname" layoutX="26.0" layoutY="151.0" prefHeight="26.0" prefWidth="220.0"/>
+        <Label layoutX="25.0" layoutY="132.0" text="Nickname" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="16.0"/>
+            </font>
+        </Label>
+        <PasswordField fx:id="pf_loginPassword" layoutX="25.0" layoutY="205.0" prefHeight="26.0" prefWidth="220.0"/>
+        <Button layoutX="168.0" layoutY="249.0" mnemonicParsing="false" onMouseClicked="#loginControl" prefHeight="35.0"
+                prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Sign In" textAlignment="CENTER">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0"/>
+            </font>
+        </Button>
+        <HBox alignment="CENTER" layoutX="29.0" layoutY="302.0" prefHeight="19.0" prefWidth="220.0">
+            <children>
+                <Line endX="90.0" stroke="WHITE" strokeWidth="3.0"/>
+                <Label alignment="CENTER" contentDisplay="TEXT_ONLY" text="Or" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman Bold" size="16.0"/>
                </font>
                <HBox.margin>
-                  <Insets left="5.0" right="5.0"/>
+                   <Insets left="5.0" right="5.0"/>
                </HBox.margin>
             </Label>
-            <Line endX="90.0" stroke="WHITE" strokeWidth="3.0"/>
+                <Line endX="90.0" stroke="WHITE" strokeWidth="3.0"/>
          </children>
       </HBox>
-      <Button layoutX="168.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#openSignUpScene"
-              prefHeight="35.0" prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Sign Up"
-              textAlignment="CENTER">
-         <font>
-            <Font name="Times New Roman Bold" size="14.0"/>
-         </font>
-      </Button>
-      <Button layoutX="29.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#loginControl" prefHeight="35.0"
-              prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Exit" textAlignment="CENTER">
-         <font>
-            <Font name="Times New Roman Bold" size="14.0"/>
-         </font>
-      </Button>
+        <Button layoutX="168.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#openSignUpScene"
+                prefHeight="35.0" prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Sign Up"
+                textAlignment="CENTER">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="btn_exit" layoutX="29.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#exit"
+                prefHeight="35.0" prefWidth="77.0" styleClass="button2" stylesheets="@main.css" text="Exit"
+                textAlignment="CENTER">
+            <font>
+                <Font name="Times New Roman Bold" size="14.0"/>
+            </font>
+        </Button>
    </children>
 </AnchorPane>

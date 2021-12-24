@@ -20,9 +20,9 @@ public class UserManager {
     }
 
     public void addUser(User user) {
-        if (user.getNickname() != null && user.getPass() != null && !userRepository.getAll().contains(user)
-                && userTypeManager.getUserTypeById(user.getUserTypeID()) != null) {
+        if (!userControl(user)) {
             userRepository.insert(user);
+            FXAlert.showInfo("Kayıt başarılı!");
         } else {
             FXAlert.showWarning("Kullanıcı kayıt edilemedi! Boş alan bırakmayın. Eğer boş alan yok ise farklı bir kullanıcı adı girin.");
         }
@@ -36,8 +36,7 @@ public class UserManager {
     }
 
     public void updateUser(User user) {
-        if (user.getNickname() != null && user.getPass() != null && !userRepository.getAll().contains(user)
-                && userTypeManager.getUserTypeById(user.getUserTypeID()) != null) {
+        if (!userControl(user)) {
             userRepository.update(user);
         } else {
             FXAlert.showWarning("Kullanıcı güncellenemedi! Boş alan bırakmayın. Eğer boş alan yok ise farklı bir kullanıcı adı girin.");
@@ -52,18 +51,27 @@ public class UserManager {
     }
 
     public User getUserById(int id) {
-        if(userRepository.getById(id) != null){
-            return userRepository.getById(id);
+        User user = userRepository.getById(id);
+        if (user != null) {
+            return user;
         }
         FXAlert.showWarning("Verilen id'ye sahip kullanıcı bulunamadı!");
         return null;
     }
 
     public User auth(String nickname, String pass) {
-        if (userRepository.auth(nickname, pass) != null) {
-            return userRepository.auth(nickname, pass);
+        User user = userRepository.auth(nickname, pass);
+        if (user != null) {
+            return user;
         }
         FXAlert.showWarning("Kullanıcı adı veya şifre hatalı!");
         return null;
     }
+
+    public boolean userControl(User user) {
+        return user.getNickname() == null || user.getPass() == null || user.getPass().equals("") || user.getNickname().equals("")
+                || userTypeManager.getUserTypeById(user.getUserTypeID()) != null
+                || userRepository.exists(user);
+    }
+
 }

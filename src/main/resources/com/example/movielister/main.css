@@ -2,8 +2,10 @@
     -fx-font-family: "Times New Roman";
     -fx-font-size: 14;
     -fx-background-color: #212121;
+}
 
-
+.imageView {
+    -fx-cursor: hand;
 }
 
 .button1
@@ -23,20 +25,18 @@
     -fx-background-radius :  30 0 0 30;
 }
 
-.button2
-{
-    -fx-background-color : #32E0C4;
-    -fx-background-radius :  20;
+.button2 {
+    -fx-background-color: rgba(0, 255, 247, 0.91);
+    -fx-background-radius: 20;
 }
-.button2:hover
-{
-    -fx-background-color : #0D7377;
-    -fx-background-radius :  20;
+.button2:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(0, 255, 247, 0.76);
+    -fx-background-radius: 20;
 }
-.button2:pressed
-{
-    -fx-background-color : #2F2B43 ;
-    -fx-background-radius :  20;
+.button2:pressed {
+    -fx-background-color: rgba(0, 255, 247, 0.58);
+    -fx-background-radius: 20;
 }
 
 .button3
@@ -70,22 +70,20 @@
 }
 
 
-.combo-box
-{
-    -fx-background-color : #141124;
-    -fx-border-color:  #515658;
+.combo-box {
+    -fx-font-family: "Times New Roman";
+    -fx-background-color: rgba(0, 255, 247, 0.76);
+    -fx-border-color: #515658;
     -fx-border-radius: 30;
 }
-.combo-box:hover
-{
-    -fx-background-color : #141124;
-    -fx-border-color:  #FFFF;
+.combo-box:hover {
+    -fx-background-color: rgba(0, 255, 247, 0.58);
+    -fx-border-color: #FFFF;
     -fx-border-radius: 30;
 }
-.combo-box:pressed
-{
-    -fx-background-color : #141124;
-    -fx-border-color:  #FFFF;
+.combo-box:pressed {
+    -fx-background-color: rgba(0, 255, 247, 0.58);
+    -fx-border-color: #FFFF;
     -fx-border-radius: 30;
 }
 

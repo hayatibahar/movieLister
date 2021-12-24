@@ -2,164 +2,164 @@ package com.example.movielister.Model;
 
 
 public class Movie implements IEntity {
-    int FILM_ID;
-    String TITLE;
-    int YEAR;
-    String RELEASED;
-    String RUNTIME;
-    String GENRE;
-    int DIRECTORID;
-    String PLOT;
-    int COUNTRYID;
-    String AWARDS;
-    String POSTER;
-    double RATE;
-    int RATECOUNT;
-    int COMMENTCOUNT;
+    int movieID;
+    String title;
+    int movieYear;
+    String released;
+    String runtime;
+    String genre;
+    int directorID;
+    String plot;
+    int countryID;
+    String awards;
+    String poster;
+    double rate;
+    int rateCount;
+    int commentCount;
 
-    public Movie(int FILM_ID, String TITLE, int YEAR, String RELEASED, String RUNTIME, String GENRE, int DIRECTORID, String PLOT, int COUNTRYID, String AWARDS, String POSTER, double RATE, int RATECOUNT, int COMMENTCOUNT) {
-        this.FILM_ID = FILM_ID;
-        this.TITLE = TITLE;
-        this.YEAR = YEAR;
-        this.RELEASED = RELEASED;
-        this.RUNTIME = RUNTIME;
-        this.GENRE = GENRE;
-        this.DIRECTORID = DIRECTORID;
-        this.PLOT = PLOT;
-        this.COUNTRYID = COUNTRYID;
-        this.AWARDS = AWARDS;
-        this.POSTER = POSTER;
-        this.RATE = RATE;
-        this.RATECOUNT = RATECOUNT;
-        this.COMMENTCOUNT = COMMENTCOUNT;
+    public Movie(int movieID, String title, int movieYear, String released, String runtime, String genre, int directorID, String plot, int countryID, String awards, String poster, double rate, int rateCount, int commentCount) {
+        this.movieID = movieID;
+        this.title = title;
+        this.movieYear = movieYear;
+        this.released = released;
+        this.runtime = runtime;
+        this.genre = genre;
+        this.directorID = directorID;
+        this.plot = plot;
+        this.countryID = countryID;
+        this.awards = awards;
+        this.poster = poster;
+        this.rate = rate;
+        this.rateCount = rateCount;
+        this.commentCount = commentCount;
     }
 
-    public Movie(String TITLE, int YEAR, String RELEASED, String RUNTIME, String GENRE, int DIRECTORID, String PLOT, int COUNTRYID, String AWARDS, String POSTER, double RATE, int RATECOUNT, int COMMENTCOUNT) {
-        this.TITLE = TITLE;
-        this.YEAR = YEAR;
-        this.RELEASED = RELEASED;
-        this.RUNTIME = RUNTIME;
-        this.GENRE = GENRE;
-        this.DIRECTORID = DIRECTORID;
-        this.PLOT = PLOT;
-        this.COUNTRYID = COUNTRYID;
-        this.AWARDS = AWARDS;
-        this.POSTER = POSTER;
-        this.RATE = RATE;
-        this.RATECOUNT = RATECOUNT;
-        this.COMMENTCOUNT = COMMENTCOUNT;
+    public Movie(String title, int movieYear, String released, String runtime, String genre, int directorID, String plot, int countryID, String awards, String poster, double rate, int rateCount, int commentCount) {
+        this.title = title;
+        this.movieYear = movieYear;
+        this.released = released;
+        this.runtime = runtime;
+        this.genre = genre;
+        this.directorID = directorID;
+        this.plot = plot;
+        this.countryID = countryID;
+        this.awards = awards;
+        this.poster = poster;
+        this.rate = rate;
+        this.rateCount = rateCount;
+        this.commentCount = commentCount;
     }
 
-    public int getDIRECTORID() {
-        return DIRECTORID;
+    public int getDirectorID() {
+        return directorID;
     }
 
-    public void setDIRECTORID(int DIRECTORID) {
-        this.DIRECTORID = DIRECTORID;
+    public void setDirectorID(int directorID) {
+        this.directorID = directorID;
     }
 
-    public int getCOUNTRYID() {
-        return COUNTRYID;
+    public int getCountryID() {
+        return countryID;
     }
 
-    public void setCOUNTRYID(int COUNTRYID) {
-        this.COUNTRYID = COUNTRYID;
+    public void setCountryID(int countryID) {
+        this.countryID = countryID;
     }
 
-    public double getRATE() {
-        return RATE;
+    public double getRate() {
+        return rate;
     }
 
-    public void setRATE(double RATE) {
-        this.RATE = RATE;
+    public void setRate(double rate) {
+        this.rate = rate;
     }
 
-    public int getRATECOUNT() {
-        return RATECOUNT;
+    public int getRateCount() {
+        return rateCount;
     }
 
-    public void setRATECOUNT(int RATECOUNT) {
-        this.RATECOUNT = RATECOUNT;
+    public void setRateCount(int rateCount) {
+        this.rateCount = rateCount;
     }
 
-    public int getCOMMENTCOUNT() {
-        return COMMENTCOUNT;
+    public int getCommentCount() {
+        return commentCount;
     }
 
-    public void setCOMMENTCOUNT(int COMMENTCOUNT) {
-        this.COMMENTCOUNT = COMMENTCOUNT;
+    public void setCommentCount(int commentCount) {
+        this.commentCount = commentCount;
     }
 
-    public int getFILM_ID() {
-        return FILM_ID;
+    public int getMovieID() {
+        return movieID;
     }
 
-    public void setFILM_ID(int FILM_ID) {
-        this.FILM_ID = FILM_ID;
+    public void setMovieID(int movieID) {
+        this.movieID = movieID;
     }
 
-    public String getTITLE() {
-        return TITLE;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTITLE(String TITLE) {
-        this.TITLE = TITLE;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public int getYEAR() {
-        return YEAR;
+    public int getMovieYear() {
+        return movieYear;
     }
 
-    public void setYEAR(int YEAR) {
-        this.YEAR = YEAR;
+    public void setMovieYear(int movieYear) {
+        this.movieYear = movieYear;
     }
 
-    public String getRELEASED() {
-        return RELEASED;
+    public String getReleased() {
+        return released;
     }
 
-    public void setRELEASED(String RELEASED) {
-        this.RELEASED = RELEASED;
+    public void setReleased(String released) {
+        this.released = released;
     }
 
-    public String getRUNTIME() {
-        return RUNTIME;
+    public String getRuntime() {
+        return runtime;
     }
 
-    public void setRUNTIME(String RUNTIME) {
-        this.RUNTIME = RUNTIME;
+    public void setRuntime(String runtime) {
+        this.runtime = runtime;
     }
 
-    public String getGENRE() {
-        return GENRE;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setGENRE(String GENRE) {
-        this.GENRE = GENRE;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getPLOT() {
-        return PLOT;
+    public String getPlot() {
+        return plot;
     }
 
-    public void setPLOT(String PLOT) {
-        this.PLOT = PLOT;
+    public void setPlot(String plot) {
+        this.plot = plot;
     }
 
-    public String getAWARDS() {
-        return AWARDS;
+    public String getAwards() {
+        return awards;
     }
 
-    public void setAWARDS(String AWARDS) {
-        this.AWARDS = AWARDS;
+    public void setAwards(String awards) {
+        this.awards = awards;
     }
 
-    public String getPOSTER() {
-        return POSTER;
+    public String getPoster() {
+        return poster;
     }
 
-    public void setPOSTER(String POSTER) {
-        this.POSTER = POSTER;
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
 

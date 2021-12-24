@@ -50,8 +50,9 @@ public class CountryManager {
     }
 
     public Country getCountryById(int id) {
-        if(countryRepository.getById(id) != null){
-            return countryRepository.getById(id);
+        Country country = countryRepository.getById(id);
+        if (country != null) {
+            return country;
         }
         FXAlert.showWarning("Verilen id'ye sahip ülke bulunamadı!");
         return null;

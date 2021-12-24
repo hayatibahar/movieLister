@@ -1,38 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <?import com.example.movielister.util.RecyclerView?>
-<AnchorPane fx:id="ap_homePage" prefHeight="506.0" prefWidth="800.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.HomePageController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="ap_homePage" prefHeight="506.0" prefWidth="800.0"
+            style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css"
+            xmlns="http://javafx.com/javafx/16" fx:controller="com.example.movielister.Controller.HomePageController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="56.0" stroke="WHITE" strokeType="INSIDE" width="626.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="56.0" stroke="WHITE" strokeType="INSIDE" width="626.0"/>
       <Label layoutX="12.0" layoutY="11.0" text="Movie Lister" textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font name="Times New Roman" size="30.0"/>
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="506.0" layoutX="627.0" layoutY="1.0" stroke="WHITE" strokeType="OUTSIDE" width="173.0" />
-      <ComboBox layoutX="627.0" layoutY="87.0" prefWidth="150.0" />
-      <ComboBox layoutX="627.0" layoutY="145.0" prefWidth="150.0" />
-      <ComboBox layoutX="627.0" layoutY="199.0" prefWidth="150.0" />
-      <Button layoutX="627.0" layoutY="253.0" mnemonicParsing="false" text="film getir" />
-      <Button layoutX="627.0" layoutY="253.0" mnemonicParsing="false" text="sıfırla" />
-      <Label layoutX="627.0" layoutY="354.0" text="kullanıcı" textFill="WHITE" />
-      <Button layoutX="627.0" layoutY="27.0" mnemonicParsing="false" text="tüm filmleri listele" />
-      <TextField layoutX="214.0" layoutY="16.0" />
-      <Button layoutX="383.0" layoutY="16.0" mnemonicParsing="false" text="ara" />
-      <Rectangle arcWidth="10.0" height="450.0" layoutY="56.0" stroke="WHITE" strokeType="OUTSIDE" width="625.0"  />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="505.0" layoutX="626.0" layoutY="1.0" stroke="WHITE"
+                 strokeType="OUTSIDE" width="193.0"/>
+      <ComboBox fx:id="cb_rate" layoutX="647.0" layoutY="86.0" prefWidth="150.0"/>
+      <ComboBox fx:id="cb_year" layoutX="647.0" layoutY="144.0" prefWidth="150.0"/>
+      <ComboBox fx:id="cb_genre" layoutX="647.0" layoutY="198.0" prefWidth="150.0"/>
+      <Button layoutX="711.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#getMovieComboBox"
+              styleClass="button2" stylesheets="@main.css" text="get movies"/>
+      <Button layoutX="653.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#resetComboBox"
+              styleClass="button2" stylesheets="@main.css" text="reset"/>
+      <TextField fx:id="tf_search" layoutX="214.0" layoutY="16.0" styleClass="textfield" stylesheets="@main.css"/>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="485.0" layoutY="13.0" onMouseClicked="#showAllMovie"
+                 pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+         <image>
+            <Image url="@image/synchronize-button.png"/>
+         </image>
+      </ImageView>
+      <Button layoutX="401.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#searchMovie" styleClass="button2"
+              stylesheets="@main.css" text="search"/>
+      <Rectangle arcWidth="10.0" height="450.0" layoutY="56.0" stroke="WHITE" strokeType="OUTSIDE" width="625.0"/>
       <AnchorPane fx:id="ap_recyclerView" layoutY="56.0" prefHeight="450.0" prefWidth="625.0">
-         <RecyclerView fx:id="items" prefWidth="625" prefHeight="450">
-
-         </RecyclerView>
+         <RecyclerView fx:id="items" prefWidth="625" prefHeight="450"/>
       </AnchorPane>
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="690.0" layoutY="379.0" onMouseClicked="#openSceneAccount"
+                 pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+         <image>
+            <Image url="@image/account-button.png"/>
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT"/>
+         </cursor>
+      </ImageView>
+      <Button layoutX="694.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#openLoginScene"
+              styleClass="button2" stylesheets="@main.css" text="log out"/>
    </children>
 </AnchorPane>
+
+

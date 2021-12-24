@@ -1,6 +1,7 @@
 package com.example.movielister.Data.Manager;
 
 import com.example.movielister.Data.Repository.DirectorRepository;
+import com.example.movielister.Model.Country;
 import com.example.movielister.Model.Director;
 import com.example.movielister.Model.User;
 import com.example.movielister.util.FXAlert;
@@ -50,6 +51,11 @@ public class DirectorManager {
     }
 
     public Director getDirectorById(int id) {
-        return directorRepository.getById(id);
+        Director director = directorRepository.getById(id);
+        if (director != null) {
+            return director;
+        }
+        FXAlert.showWarning("Verilen id'ye sahip yönetmen bulunamadı!");
+        return null;
     }
 }

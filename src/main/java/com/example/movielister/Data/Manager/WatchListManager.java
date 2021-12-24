@@ -56,8 +56,9 @@ public class WatchListManager {
     }
 
     public WatchList getWatchListById(int id) {
-        if(watchListRepository.getById(id) != null){
-            return watchListRepository.getById(id);
+        WatchList watchList = watchListRepository.getById(id);
+        if (watchList != null) {
+            return watchList;
         }
         FXAlert.showWarning("Verilen id'ye sahip izleme listesi bulunamadı!");
         return null;

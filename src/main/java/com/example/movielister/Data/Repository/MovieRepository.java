@@ -45,9 +45,9 @@ public class MovieRepository implements Dao<Movie> {
                         "(title,movieYear,released,runtime,genre,directorID,plot,countryID,awards," +
                         "poster,rate,ratecount,commentcount) " +
                         "values ('%s',%d,'%s','%s','%s',%d,'%s',%d,'%s','%s',%f,%d,%d)",
-                movie.getTITLE(), movie.getYEAR(), movie.getRELEASED(), movie.getRUNTIME(), movie.getGENRE(),
-                movie.getDIRECTORID(), movie.getPLOT(), movie.getCOUNTRYID(), movie.getAWARDS(), movie.getPOSTER(), movie.getRATE(),
-                movie.getRATECOUNT(), movie.getCOMMENTCOUNT());
+                movie.getTitle(), movie.getMovieYear(), movie.getReleased(), movie.getRuntime(), movie.getGenre(),
+                movie.getDirectorID(), movie.getPlot(), movie.getCountryID(), movie.getAwards(), movie.getPoster(), movie.getRate(),
+                movie.getRateCount(), movie.getCommentCount());
 
         DBUtil.dbExecuteUpdate(query);
     }
@@ -58,16 +58,16 @@ public class MovieRepository implements Dao<Movie> {
                         "title = '%s', movieYear = %d,released = '%s',runtime = '%s',genre = '%s'," +
                         "directorID = %d,plot = '%s',countryID = %d,awards = '%s',poster = '%s'," +
                         "rate = %f,ratecount = %d,commentcount = %d WHERE movieID = %d",
-                movie.getTITLE(), movie.getYEAR(), movie.getRELEASED(), movie.getRUNTIME(), movie.getGENRE(),
-                movie.getDIRECTORID(), movie.getPLOT(), movie.getCOUNTRYID(), movie.getAWARDS(), movie.getPOSTER(), movie.getRATE(),
-                movie.getRATECOUNT(), movie.getCOMMENTCOUNT(),movie.getFILM_ID());
+                movie.getTitle(), movie.getMovieYear(), movie.getReleased(), movie.getRuntime(), movie.getGenre(),
+                movie.getDirectorID(), movie.getPlot(), movie.getCountryID(), movie.getAwards(), movie.getPoster(), movie.getRate(),
+                movie.getRateCount(), movie.getCommentCount(), movie.getMovieID());
 
         DBUtil.dbExecuteUpdate(query);
     }
 
     @Override
     public void delete(Movie movie) {
-        String query = String.format("DELETE FROM movie_tbl WHERE movieID = %d ",movie.getFILM_ID());
+        String query = String.format("DELETE FROM movie_tbl WHERE movieID = %d ", movie.getMovieID());
 
         DBUtil.dbExecuteUpdate(query);
     }
@@ -107,5 +107,64 @@ public class MovieRepository implements Dao<Movie> {
         }
         return null;
     }
+
+    public ObservableList<Movie> getByTitle(String title) {
+        ObservableList<Movie> movies = FXCollections.observableArrayList();
+        String query = "SELECT * FROM movie_tbl WHERE title like '%" + title + "%' COLLATE BINARY_CI ";
+        ResultSet resultSet = DBUtil.dbExecuteQuery(query);
+        try {
+            while (resultSet.next()) {
+                movies.add(new Movie(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getInt(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getString(6),
+                        resultSet.getInt(7),
+                        resultSet.getString(8),
+                        resultSet.getInt(9),
+                        resultSet.getString(10),
+                        resultSet.getString(11),
+                        resultSet.getDouble(12),
+                        resultSet.getInt(13),
+                        resultSet.getInt(14)
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return movies;
+    }
+
+    public ObservableList<Movie> get(String genre, int year, Double rate) {
+        ObservableList<Movie> movies = FXCollections.observableArrayList();
+        String query = String.format("SELECT * FROM movie_tbl WHERE genre = '%s' and movieYear >= %d and rate >= %f", genre, year, rate);
+        ResultSet resultSet = DBUtil.dbExecuteQuery(query);
+        try {
+            while (resultSet.next()) {
+                movies.add(new Movie(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getInt(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getString(6),
+                        resultSet.getInt(7),
+                        resultSet.getString(8),
+                        resultSet.getInt(9),
+                        resultSet.getString(10),
+                        resultSet.getString(11),
+                        resultSet.getDouble(12),
+                        resultSet.getInt(13),
+                        resultSet.getInt(14)
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return movies;
+    }
+
 
 }

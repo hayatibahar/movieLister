@@ -22,8 +22,6 @@ public class DBUtil {
 
         }
 
-        System.out.println("Oracle JDBC Driver Registered!");
-
         try {
             conn = DriverManager.getConnection(connStr, user, password);
         } catch (SQLException e) {

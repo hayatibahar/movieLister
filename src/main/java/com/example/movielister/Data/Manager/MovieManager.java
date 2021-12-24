@@ -24,12 +24,13 @@ public class MovieManager {
     }
 
     public void addMovie(Movie movie) {
-        if (countryManager.getCountryById(movie.getCOUNTRYID()) != null &&
-                directorManager.getDirectorById(movie.getDIRECTORID()) != null &&
-                movie.getYEAR() <= Year.now().getValue() && movie.getTITLE() != null && movie.getRELEASED() != null
-                && movie.getRUNTIME() != null && movie.getGENRE() != null && movie.getPLOT() != null && movie.getAWARDS() != null
-                && movie.getPOSTER() != null && movie.getRATE() >= 0 && movie.getRATECOUNT() >= 0 && movie.getCOMMENTCOUNT() >= 0) {
+        if (countryManager.getCountryById(movie.getCountryID()) != null &&
+                directorManager.getDirectorById(movie.getDirectorID()) != null &&
+                movie.getMovieYear() <= Year.now().getValue() && movie.getTitle() != null && movie.getReleased() != null
+                && movie.getRuntime() != null && movie.getGenre() != null && movie.getPlot() != null && movie.getAwards() != null
+                && movie.getPoster() != null && movie.getRate() >= 0 && movie.getRateCount() >= 0 && movie.getCommentCount() >= 0) {
             movieRepository.insert(movie);
+            FXAlert.showInfo("Kayıt başarılı!");
         } else {
             FXAlert.showWarning("Film kayıt edilemedi! Tüm alanların doğru girildiğinden emin olun. " +
                     "Ayrıca yönetmen ya da ülkeler tablosunda bulunmayan veri girişi yapılamaz. " +
@@ -38,18 +39,18 @@ public class MovieManager {
     }
 
     public void deleteMovie(Movie movie) {
-        boolean okay = FXAlert.showConfirmed(movie.getTITLE()+" silenecek onaylıyor musunuz?");
+        boolean okay = FXAlert.showConfirmed(movie.getTitle() + " silenecek onaylıyor musunuz?");
         if (okay) {
             movieRepository.delete(movie);
         }
     }
 
     public void updateMovie(Movie movie) {
-        if (countryManager.getCountryById(movie.getCOUNTRYID()) != null &&
-                directorManager.getDirectorById(movie.getDIRECTORID()) != null &&
-                movie.getYEAR() <= Year.now().getValue() && movie.getTITLE() != null && movie.getRELEASED() != null
-                && movie.getRUNTIME() != null && movie.getGENRE() != null && movie.getPLOT() != null && movie.getAWARDS() != null
-                && movie.getPOSTER() != null && movie.getRATE() >= 0 && movie.getRATECOUNT() >= 0 && movie.getCOMMENTCOUNT() >= 0) {
+        if (countryManager.getCountryById(movie.getCountryID()) != null &&
+                directorManager.getDirectorById(movie.getDirectorID()) != null &&
+                movie.getMovieYear() <= Year.now().getValue() && movie.getTitle() != null && movie.getReleased() != null
+                && movie.getRuntime() != null && movie.getGenre() != null && movie.getPlot() != null && movie.getAwards() != null
+                && movie.getPoster() != null && movie.getRate() >= 0 && movie.getRateCount() >= 0 && movie.getCommentCount() >= 0) {
             movieRepository.update(movie);
         } else {
             FXAlert.showWarning("Film güncellenemedi! Tüm alanların doğru girildiğinden emin olun. " +
@@ -59,7 +60,6 @@ public class MovieManager {
     }
 
     public void deleteAllMovie(User user) {
-        // TODO REFACTOR; KULLANICI ŞİFRESİ Mİ SORALIM, DATABASE ŞİFRESİ Mİ
         Optional<String> answer = FXAlert.input().withText("Tüm filmler silenecek emin misiniz?","Şifrenizi girin:").showAndWaitString();
         if (answer.isPresent() && answer.get().equals(user.getPass())){
             movieRepository.deleteAll();
@@ -67,11 +67,29 @@ public class MovieManager {
     }
 
     public Movie getMovieById(int id) {
-        if(movieRepository.getById(id) != null){
-            return movieRepository.getById(id);
+        Movie movie = movieRepository.getById(id);
+        if (movie != null) {
+            return movie;
         }
         FXAlert.showWarning("Verilen id'ye sahip film bulunamadı!");
         return null;
     }
+
+    public ObservableList<Movie> getByTitle(String title) {
+        ObservableList<Movie> movie = movieRepository.getByTitle(title);
+        if (movie != null) {
+            return movie;
+        }
+        return null;
+    }
+
+    public ObservableList<Movie> get(String genre, int year, Double rate) {
+        ObservableList<Movie> movie = movieRepository.get(genre, year, rate);
+        if (movie != null) {
+            return movie;
+        }
+        return null;
+    }
+
 
 }

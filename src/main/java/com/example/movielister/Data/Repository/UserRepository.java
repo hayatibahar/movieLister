@@ -95,8 +95,11 @@ public class UserRepository implements Dao<User> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return newUser;
+    }
+
+    public boolean exists(User user) {
+        return CommonRepository.exists(String.format("SELECT * FROM user_tbl WHERE nickname = '%s'", user.getNickname()));
     }
 
 }
