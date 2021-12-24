@@ -10,101 +10,85 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="786.0" prefWidth="800.0"
-            style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css"
-            xmlns="http://javafx.com/javafx/17" fx:controller="com.example.movielister.Controller.AdminMovieController">
+<AnchorPane prefHeight="892.0" prefWidth="800.0" style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AdminMovieController">
     <cursor>
-        <Cursor fx:constant="DEFAULT"/>
+        <Cursor fx:constant="DEFAULT" />
     </cursor>
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE"
-                   strokeWidth="3.0" width="800.0"/>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="789.0" stroke="WHITE" strokeType="INSIDE"
-                   strokeWidth="3.0" width="280.0"/>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="735.0" layoutX="277.0" layoutY="54.0"
-                   stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="523.0"/>
-        <Text fill="WHITE" fontSmoothingType="LCD" layoutX="471.0" layoutY="366.0" strokeType="OUTSIDE"
-              strokeWidth="0.0" text="DB" textAlignment="CENTER">
-            <font>
-                <Font name="Times New Roman" size="86.0"/>
-            </font>
-        </Text>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="800.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="901.0" layoutY="-8.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="283.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="839.0" layoutX="280.0" layoutY="54.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="520.0" />
         <Label layoutX="26.0" layoutY="5.0" text="Movie Lister" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="44.0"/>
+                <Font name="Times New Roman" size="44.0" />
             </font>
         </Label>
-        <Label contentDisplay="CENTER" layoutX="478.0" layoutY="16.0" text="Movie Panel" textAlignment="CENTER"
-               textFill="WHITE">
+        <Label contentDisplay="CENTER" layoutX="478.0" layoutY="16.0" text="Movie Panel" textAlignment="CENTER" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="24.0"/>
+                <Font name="Times New Roman" size="24.0" />
             </font>
         </Label>
         <Label layoutX="14.0" layoutY="63.0" text="Admin Panel" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="24.0"/>
+                <Font name="Times New Roman" size="24.0" />
             </font>
         </Label>
-        <Line endX="153.0" layoutX="113.0" layoutY="91.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0"/>
-        <TextField fx:id="tf_title" layoutX="13.0" layoutY="143.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Movie Title"/>
-        <TextField fx:id="tf_year" layoutX="13.0" layoutY="185.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Movie Year"/>
-        <TextField fx:id="tf_released" layoutX="13.0" layoutY="227.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Released"/>
-        <TextField fx:id="tf_runtime" layoutX="13.0" layoutY="269.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Runtime"/>
-        <TextField fx:id="tf_genre" layoutX="13.0" layoutY="311.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Genre"/>
-        <TextField fx:id="tf_directorID" layoutX="13.0" layoutY="353.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="DirectorID"/>
-        <TextField fx:id="tf_plot" layoutX="13.0" layoutY="395.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Plot"/>
-        <TextField fx:id="tf_awards" layoutX="13.0" layoutY="479.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Awards"/>
-        <TextField fx:id="tf_countryID" layoutX="13.0" layoutY="437.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Country Id"/>
-        <TextField fx:id="tf_commentCount" layoutX="13.0" layoutY="647.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="CommentCount"/>
-        <TextField fx:id="tf_rateCount" layoutX="13.0" layoutY="605.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="RateCount"/>
-        <TextField fx:id="tf_rate" layoutX="13.0" layoutY="563.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Rate"/>
-        <TextField fx:id="tf_poster" layoutX="13.0" layoutY="521.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Poster"/>
-        <Button fx:id="btn_update" layoutX="99.0" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#updateMovie"
-                prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Update"/>
-        <Button fx:id="btn_delete" layoutX="184.0" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#deleteMovie"
-                prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Delete"/>
-        <Button fx:id="btn_add" layoutX="14.0" layoutY="690.0" mnemonicParsing="false" onMouseClicked="#addMovie"
-                prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Add"/>
-        <Button fx:id="btn_homePage" layoutX="50.0" layoutY="736.0" mnemonicParsing="false"
-                onMouseClicked="#openHomePageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2"
-                stylesheets="@main.css" text="Home Page"/>
-        <Button fx:id="btn_adminPage" layoutX="143.0" layoutY="736.0" mnemonicParsing="false"
-                onMouseClicked="#openAdminPageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2"
-                stylesheets="@main.css" text="Admin Page"/>
-        <TableView fx:id="table_movie" layoutX="280.0" layoutY="57.0" prefHeight="729.0" prefWidth="516.0">
+        <Line endX="153.0" layoutX="113.0" layoutY="91.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
+        <TextField fx:id="tf_title" layoutX="13.0" layoutY="156.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_year" layoutX="13.0" layoutY="198.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_released" layoutX="13.0" layoutY="240.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_runtime" layoutX="13.0" layoutY="282.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_genre" layoutX="13.0" layoutY="324.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_directorID" layoutX="13.0" layoutY="366.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_plot" layoutX="13.0" layoutY="409.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_awards" layoutX="13.0" layoutY="494.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_countryID" layoutX="13.0" layoutY="451.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_commentCount" layoutX="13.0" layoutY="662.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_rateCount" layoutX="13.0" layoutY="620.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_rate" layoutX="13.0" layoutY="578.0" prefHeight="25.0" prefWidth="254.0" />
+        <TextField fx:id="tf_poster" layoutX="13.0" layoutY="536.0" prefHeight="25.0" prefWidth="254.0" />
+        <Button fx:id="btn_update" layoutX="99.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#updateMovie" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Update" />
+        <Button fx:id="btn_delete" layoutX="184.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#deleteMovie" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Delete" />
+        <Button fx:id="btn_add" layoutX="14.0" layoutY="705.0" mnemonicParsing="false" onMouseClicked="#addMovie" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Add" />
+        <Button fx:id="btn_homePage" layoutX="48.0" layoutY="841.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Home Page" />
+        <Button fx:id="btn_adminPage" layoutX="143.0" layoutY="841.0" mnemonicParsing="false" onMouseClicked="#openAdminPageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Admin Page" />
+        <TableView fx:id="table_movie" layoutX="283.0" layoutY="57.0" prefHeight="833.0" prefWidth="513.0">
             <columns>
-                <TableColumn fx:id="id" prefWidth="75.0" text="id"/>
-                <TableColumn fx:id="title" prefWidth="75.0" text="title"/>
-                <TableColumn fx:id="year" prefWidth="75.0" text="year"/>
-                <TableColumn fx:id="released" prefWidth="75.0" text="released"/>
-                <TableColumn fx:id="runtime" prefWidth="75.0" text="runtime"/>
-                <TableColumn fx:id="genre" prefWidth="75.0" text="genre"/>
-                <TableColumn fx:id="directorID" prefWidth="75.0" text="directorID"/>
-                <TableColumn fx:id="plot" prefWidth="75.0" text="plot"/>
-                <TableColumn fx:id="countryID" prefWidth="75.0" text="countryID"/>
-                <TableColumn fx:id="awards" prefWidth="75.0" text="awards"/>
-                <TableColumn fx:id="poster" prefWidth="75.0" text="poster"/>
-                <TableColumn fx:id="rate" prefWidth="75.0" text="rate"/>
-                <TableColumn fx:id="rateCount" prefWidth="75.0" text="rateCount"/>
-                <TableColumn fx:id="commentCount" prefWidth="75.0" text="commentCount"/>
+                <TableColumn fx:id="id" prefWidth="75.0" text="MovieID" />
+                <TableColumn fx:id="title" prefWidth="75.0" text="Title" />
+                <TableColumn fx:id="year" prefWidth="75.0" text="Year" />
+                <TableColumn fx:id="released" prefWidth="75.0" text="Released" />
+                <TableColumn fx:id="runtime" prefWidth="75.0" text="Runtime" />
+                <TableColumn fx:id="genre" prefWidth="75.0" text="Genre" />
+                <TableColumn fx:id="directorID" prefWidth="75.0" text="DirectorID" />
+                <TableColumn fx:id="plot" prefWidth="75.0" text="Plot" />
+                <TableColumn fx:id="countryID" prefWidth="75.0" text="CountryID" />
+                <TableColumn fx:id="awards" prefWidth="75.0" text="Awards" />
+                <TableColumn fx:id="poster" prefWidth="75.0" text="Poster" />
+                <TableColumn fx:id="rate" prefWidth="75.0" text="Rate" />
+                <TableColumn fx:id="rateCount" prefWidth="75.0" text="RateCount" />
+                <TableColumn fx:id="commentCount" prefWidth="75.0" text="CommentCount" />
             </columns>
         </TableView>
-        <TextField fx:id="tf_id" editable="false" layoutX="13.0" layoutY="104.0" prefHeight="25.0" prefWidth="254.0"
-                   promptText="Movie ID"/>
+        <TextField fx:id="tf_id" editable="false" layoutX="13.0" layoutY="114.0" prefHeight="25.0" prefWidth="254.0" />
+      <Label layoutX="14.0" layoutY="98.0" text="Movie ID" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="140.0" text="Movie Title" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="182.0" text="Movie Year" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="224.0" text="Released" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="266.0" text="Runtime" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="308.0" text="Genre" textFill="WHITE" />
+      <Label layoutX="15.0" layoutY="392.0" text="Plot" textFill="WHITE" />
+      <Label layoutX="15.0" layoutY="350.0" text="Director ID" textFill="WHITE" />
+      <Label layoutX="15.0" layoutY="435.0" text="Country ID" textFill="WHITE" />
+      <Label layoutX="16.0" layoutY="604.0" text="Rate Count" textFill="WHITE" />
+      <Label layoutX="13.0" layoutY="562.0" text="Rate" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="646.0" text="Comment Count" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="520.0" text="Poster" textFill="WHITE" />
+      <Label layoutX="16.0" layoutY="478.0" text="Awards" textFill="WHITE" />
+      <Line endX="153.0" layoutX="114.0" layoutY="754.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
+      <Line endX="153.0" layoutX="116.0" layoutY="825.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
+      <Button fx:id="btn_homePage1" layoutX="15.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="Director Panel" />
+      <Button fx:id="btn_homePage11" layoutX="168.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="Country Panel" />
     </children>
 </AnchorPane>

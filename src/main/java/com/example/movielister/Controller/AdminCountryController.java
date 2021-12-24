@@ -1,6 +1,6 @@
 package com.example.movielister.Controller;
 
-public class AdminCommentController {
+public class AdminCountryController {
 }
 /*TODO
     Text Field - FX:id'leri eklenecek.

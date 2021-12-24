@@ -7,48 +7,61 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="378.0" prefWidth="272.0" style="-fx-background-color: #121212;"
-            styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17"
-            fx:controller="com.example.movielister.Controller.AdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="272.0" style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AdminController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" height="374.0" layoutX="2.0" layoutY="2.0" stroke="WHITE"
-                   strokeWidth="3.0" width="269.0"/>
-        <Label layoutX="26.0" layoutY="71.0" text="Admin Panel" textFill="WHITE">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="374.0" layoutX="2.0" layoutY="2.0" stroke="WHITE" strokeWidth="3.0" width="269.0" />
+        <Label layoutX="21.0" layoutY="64.0" text="Admin Panel" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="44.0"/>
+                <Font name="Times New Roman" size="44.0" />
             </font>
         </Label>
-        <Label layoutX="28.0" layoutY="21.0" text="Movie Lister" textFill="WHITE">
+        <Label layoutX="23.0" layoutY="14.0" text="Movie Lister" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="44.0"/>
+                <Font name="Times New Roman" size="44.0" />
             </font>
         </Label>
-        <Line endX="165.0" endY="-1.52587890625E-5" layoutX="104.0" layoutY="120.0" startX="-100.0" stroke="WHITE"
-              strokeWidth="3.0"/>
-        <Button layoutX="187.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#openLoginScene"
-                styleClass="button2" stylesheets="@main.css" text="Log Out" textAlignment="CENTER"/>
-        <Line endX="165.0" endY="-1.52587890625E-5" layoutX="104.0" layoutY="307.0" startX="-100.0" stroke="WHITE"
-              strokeWidth="3.0"/>
-        <Label fx:id="lbl_nickname" layoutX="26.0" layoutY="134.0" textFill="WHITE">
+        <Line endX="165.0" endY="-1.52587890625E-5" layoutX="104.0" layoutY="120.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+        <Button layoutX="187.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#openLoginScene" styleClass="button2" stylesheets="@main.css" text="Log Out" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Line endX="165.0" endY="-1.52587890625E-5" layoutX="104.0" layoutY="307.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+        <Label fx:id="lbl_nickname" layoutX="26.0" layoutY="134.0" prefHeight="19.0" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="16.0"/>
+                <Font name="Times New Roman" size="16.0" />
             </font>
         </Label>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" height="84.0" layoutX="21.0" layoutY="164.0" stroke="WHITE"
-                   strokeType="INSIDE" strokeWidth="2.0" width="231.0"/>
-        <Label layoutX="114.0" layoutY="175.0" text="Edit" textFill="WHITE">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="159.0" layoutX="22.0" layoutY="134.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="231.0" />
+        <Label layoutX="114.0" layoutY="144.0" text="Edit" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="26.0"/>
+                <Font name="Times New Roman" size="26.0" />
             </font>
         </Label>
-        <Button layoutX="27.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#openAdminMovieScene"
-                styleClass="button2" stylesheets="@main.css" text="Movie "/>
-        <Button layoutX="178.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#openAdminAccountScene"
-                styleClass="button2" stylesheets="@main.css" text="Account"/>
-        <Button layoutX="100.0" layoutY="259.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene"
-                styleClass="button2" stylesheets="@main.css" text="Home Page"/>
-        <Button layoutX="94.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#openAdminCommentScene"
-                styleClass="button2" stylesheets="@main.css" text="Comment"/>
+        <Button layoutX="38.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#openAdminMovieScene" styleClass="button2" stylesheets="@main.css" text="Movie " textAlignment="JUSTIFY">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Button layoutX="170.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#openAdminAccountScene" styleClass="button2" stylesheets="@main.css" text="Account" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Button layoutX="23.0" layoutY="323.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" styleClass="button2" stylesheets="@main.css" text="Home Page" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Button layoutX="97.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#openAdminCommentScene" styleClass="button2" stylesheets="@main.css" text="Comment" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="170.0" layoutY="244.0" mnemonicParsing="false" styleClass="button2" stylesheets="@main.css" text="Country" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="38.0" layoutY="244.0" mnemonicParsing="false" styleClass="button2" stylesheets="@main.css" text="Director" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

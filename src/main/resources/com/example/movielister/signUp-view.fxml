@@ -10,53 +10,47 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="404.0" prefWidth="273.0" style="-fx-background-color: #121212;"
-            stylesheets="@main.css" xmlns="http://javafx.com/javafx/16"
-            fx:controller="com.example.movielister.Controller.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="273.0" style="-fx-background-color: #121212;" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.SignUpController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="2.0" layoutY="2.0" stroke="WHITE"
-                   strokeWidth="3.0" width="269.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="400.0" layoutX="2.0" layoutY="2.0" stroke="WHITE" strokeWidth="3.0" width="269.0" />
         <Label layoutX="26.0" layoutY="183.0" text="Password" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="16.0"/>
+                <Font name="Times New Roman" size="16.0" />
             </font>
         </Label>
         <Label layoutX="76.0" layoutY="63.0" text="Sign Up" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="36.0"/>
+                <Font name="Times New Roman" size="36.0" />
             </font>
         </Label>
         <Label layoutX="22.0" layoutY="13.0" text="Movie Lister" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="44.0"/>
+                <Font name="Times New Roman" size="44.0" />
             </font>
         </Label>
-        <Line endX="165.0" layoutX="104.0" layoutY="112.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0"/>
-        <TextField fx:id="tf_nickname" layoutX="27.0" layoutY="148.0" prefHeight="26.0" prefWidth="220.0"/>
+        <Line endX="165.0" layoutX="104.0" layoutY="112.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+        <TextField fx:id="tf_nickname" layoutX="27.0" layoutY="148.0" prefHeight="26.0" prefWidth="220.0" />
         <Label layoutX="26.0" layoutY="129.0" text="Nickname" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="16.0"/>
+                <Font name="Times New Roman" size="16.0" />
             </font>
         </Label>
-        <Button fx:id="btn_signUp" layoutX="169.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#signUp"
-                prefHeight="35.0" prefWidth="77.0" styleClass="button2" text="Sign Up" textAlignment="CENTER">
+        <Button fx:id="btn_signUp" layoutX="169.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#signUp" prefHeight="35.0" prefWidth="77.0" styleClass="button2" text="Sign Up" textAlignment="CENTER">
             <font>
-                <Font name="Times New Roman Bold" size="14.0"/>
+                <Font name="Times New Roman" size="14.0" />
             </font>
         </Button>
         <Label layoutX="27.0" layoutY="239.0" text="Password Confirm" textAlignment="CENTER" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="16.0"/>
+                <Font name="Times New Roman" size="16.0" />
             </font>
         </Label>
-        <ImageView fitHeight="35.0" fitWidth="54.0" layoutX="27.0" layoutY="300.0" onMouseClicked="#openLoginScene"
-                   pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="35.0" fitWidth="54.0" layoutX="27.0" layoutY="300.0" onMouseClicked="#openLoginScene" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@image/back-button.png"/>
+                <Image url="@image/back-button.png" />
             </image>
         </ImageView>
-        <TextField fx:id="tf_pass" layoutX="26.0" layoutY="202.0" prefHeight="26.0" prefWidth="220.0"/>
-        <TextField fx:id="tf_passConfirm" layoutX="26.0" layoutY="258.0" prefHeight="26.0" prefWidth="220.0"/>
+        <TextField fx:id="tf_pass" layoutX="26.0" layoutY="202.0" prefHeight="26.0" prefWidth="220.0" />
+        <TextField fx:id="tf_passConfirm" layoutX="26.0" layoutY="258.0" prefHeight="26.0" prefWidth="220.0" />
     </children>
 </AnchorPane>

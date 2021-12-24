@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="369.0" prefWidth="800.0" style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AdminDirectorController">
+    <cursor>
+        <Cursor fx:constant="DEFAULT" />
+    </cursor>
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="800.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="390.0" layoutY="-8.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="283.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="328.0" layoutX="280.0" layoutY="54.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="520.0" />
+        <Label layoutX="26.0" layoutY="5.0" text="Movie Lister" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="44.0" />
+            </font>
+        </Label>
+        <Label contentDisplay="CENTER" layoutX="470.0" layoutY="15.0" text="Director Panel" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="63.0" text="Admin Panel" textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="24.0" />
+            </font>
+        </Label>
+        <Line endX="153.0" layoutX="113.0" layoutY="91.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
+        <TextField layoutX="13.0" layoutY="156.0" prefHeight="25.0" prefWidth="254.0" />
+        <Button layoutX="99.0" layoutY="192.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Update" />
+        <Button layoutX="184.0" layoutY="192.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Delete" />
+        <Button layoutX="14.0" layoutY="192.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Add" />
+        <Button layoutX="48.0" layoutY="328.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Home Page" />
+        <Button layoutX="143.0" layoutY="328.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Admin Page" />
+        <TableView layoutX="283.0" layoutY="57.0" prefHeight="322.0" prefWidth="514.0">
+            <columns>
+                <TableColumn prefWidth="84.0" text="Director ID" />
+                <TableColumn prefWidth="429.0" text="Director Name" />
+            </columns>
+        </TableView>
+        <TextField editable="false" layoutX="13.0" layoutY="114.0" prefHeight="25.0" prefWidth="254.0" />
+        <Label layoutX="14.0" layoutY="98.0" text="Director ID" textFill="WHITE" />
+        <Label layoutX="14.0" layoutY="140.0" text="Director Name" textFill="WHITE" />
+        <Line endX="153.0" layoutX="114.0" layoutY="241.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
+        <Line endX="153.0" layoutX="116.0" layoutY="312.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
+        <Button layoutX="96.0" layoutY="258.0" mnemonicParsing="false" prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="Movie Page" />
+    </children>
+</AnchorPane>
