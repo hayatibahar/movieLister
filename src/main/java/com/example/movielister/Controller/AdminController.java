@@ -30,7 +30,17 @@ public class AdminController extends BaseController implements Initializable {
 
     @FXML
     void openAdminAccountScene(MouseEvent event) {
-        openStage(event,"adminAccount-view.fxml");
+        openStage(event, "adminAccount-view.fxml");
+    }
+
+    @FXML
+    void openAdminCountryScene(MouseEvent event) {
+        openStage(event, "adminCountry-view.fxml");
+    }
+
+    @FXML
+    void openAdminDirectoryScene(MouseEvent event) {
+        openStage(event, "adminDirector-view.fxml");
     }
 
     @FXML

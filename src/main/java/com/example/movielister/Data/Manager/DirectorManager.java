@@ -1,7 +1,6 @@
 package com.example.movielister.Data.Manager;
 
 import com.example.movielister.Data.Repository.DirectorRepository;
-import com.example.movielister.Model.Country;
 import com.example.movielister.Model.Director;
 import com.example.movielister.Model.User;
 import com.example.movielister.util.FXAlert;
@@ -21,7 +20,7 @@ public class DirectorManager {
     }
 
     public void addDirector(Director director) {
-        if (director.getDirector() != null && !directorRepository.getAll().contains(director)) {
+        if (directorControl(director)) {
             directorRepository.insert(director);
         } else {
             FXAlert.showWarning("Yönetmen kayıt edilemedi! Girilen değeri kontrol edin.");
@@ -36,7 +35,7 @@ public class DirectorManager {
     }
 
     public void updateDirector(Director director) {
-        if (director.getDirector() != null && !directorRepository.getAll().contains(director)) {
+        if (directorControl(director)) {
             directorRepository.update(director);
         } else {
             FXAlert.showWarning("Yönetmen güncellenemedi! Girilen değeri kontrol edin.");
@@ -57,5 +56,9 @@ public class DirectorManager {
         }
         FXAlert.showWarning("Verilen id'ye sahip yönetmen bulunamadı!");
         return null;
+    }
+
+    public boolean directorControl(Director director) {
+        return director.getDirector() != null && !directorRepository.exists(director);
     }
 }

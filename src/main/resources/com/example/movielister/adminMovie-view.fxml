@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="809.0" prefWidth="800.0" style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AdminMovieController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="809.0" prefWidth="800.0"
+            style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css"
+            xmlns="http://javafx.com/javafx/16" fx:controller="com.example.movielister.Controller.AdminMovieController">
     <cursor>
-        <Cursor fx:constant="DEFAULT" />
+        <Cursor fx:constant="DEFAULT"/>
     </cursor>
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="800.0" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="820.0" layoutY="-8.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="283.0" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="757.0" layoutX="280.0" layoutY="54.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="520.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE"
+                   strokeWidth="3.0" width="800.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="820.0" layoutY="-8.0" stroke="WHITE"
+                   strokeType="INSIDE" strokeWidth="3.0" width="283.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="757.0" layoutX="280.0" layoutY="54.0"
+                   stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="520.0"/>
         <Label layoutX="26.0" layoutY="5.0" text="Movie Lister" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="44.0" />
+                <Font name="Times New Roman" size="44.0"/>
             </font>
         </Label>
         <Label contentDisplay="CENTER" layoutX="478.0" layoutY="16.0" text="Movie Panel" textAlignment="CENTER" textFill="WHITE">
@@ -76,17 +75,19 @@
       <Label layoutX="14.0" layoutY="182.0" text="Movie Year" textFill="WHITE" />
       <Label layoutX="14.0" layoutY="224.0" text="Released" textFill="WHITE" />
       <Label layoutX="14.0" layoutY="266.0" text="Runtime" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="308.0" text="Genre" textFill="WHITE" />
-      <Label layoutX="15.0" layoutY="392.0" text="Plot" textFill="WHITE" />
-      <Label layoutX="15.0" layoutY="350.0" text="Director ID" textFill="WHITE" />
-      <Label layoutX="15.0" layoutY="435.0" text="Country ID" textFill="WHITE" />
-      <Label layoutX="16.0" layoutY="604.0" text="Rate Count" textFill="WHITE" />
-      <Label layoutX="13.0" layoutY="562.0" text="Rate" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="646.0" text="Comment Count" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="520.0" text="Poster" textFill="WHITE" />
-      <Label layoutX="16.0" layoutY="478.0" text="Awards" textFill="WHITE" />
-      <Line endX="153.0" layoutX="114.0" layoutY="754.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
-      <Button fx:id="btn_homePage1" layoutX="15.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Director P." />
-      <Button fx:id="btn_homePage11" layoutX="184.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Country P." />
+        <Label layoutX="14.0" layoutY="308.0" text="Genre" textFill="WHITE"/>
+        <Label layoutX="15.0" layoutY="392.0" text="Plot" textFill="WHITE"/>
+        <Label layoutX="15.0" layoutY="350.0" text="Director ID" textFill="WHITE"/>
+        <Label layoutX="15.0" layoutY="435.0" text="Country ID" textFill="WHITE"/>
+        <Label layoutX="16.0" layoutY="604.0" text="Rate Count" textFill="WHITE"/>
+        <Label layoutX="13.0" layoutY="562.0" text="Rate" textFill="WHITE"/>
+        <Label layoutX="14.0" layoutY="646.0" text="Comment Count" textFill="WHITE"/>
+        <Label layoutX="14.0" layoutY="520.0" text="Poster" textFill="WHITE"/>
+        <Label layoutX="16.0" layoutY="478.0" text="Awards" textFill="WHITE"/>
+        <Line endX="153.0" layoutX="114.0" layoutY="754.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0"/>
+        <Button layoutX="15.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openAdminDirectorScene"
+                prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Director P."/>
+        <Button layoutX="184.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openAdminCountryScene"
+                prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Country P."/>
     </children>
 </AnchorPane>

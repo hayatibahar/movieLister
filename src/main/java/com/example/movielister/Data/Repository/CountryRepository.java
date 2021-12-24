@@ -3,7 +3,6 @@ package com.example.movielister.Data.Repository;
 import com.example.movielister.Data.DBUtil;
 import com.example.movielister.Data.Dao.Dao;
 import com.example.movielister.Model.Country;
-import com.example.movielister.Model.Director;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -72,6 +71,10 @@ public class CountryRepository implements Dao<Country> {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean exists(Country country) {
+        return CommonRepository.exists(String.format("SELECT * FROM country_tbl WHERE country = '%s'", country.getCountry()));
     }
 
 }

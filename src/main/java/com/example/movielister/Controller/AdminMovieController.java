@@ -3,6 +3,7 @@ package com.example.movielister.Controller;
 import com.example.movielister.Data.Manager.MovieManager;
 import com.example.movielister.Data.Repository.MovieRepository;
 import com.example.movielister.Model.Movie;
+import com.example.movielister.util.FXAlert;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,7 +19,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminMovieController extends BaseController implements Initializable {
-    MovieManager movieManager = new MovieManager(new MovieRepository());
+    private MovieManager movieManager = new MovieManager(new MovieRepository());
 
     @FXML
     private TableColumn<Movie, String> awards;
@@ -143,6 +144,7 @@ public class AdminMovieController extends BaseController implements Initializabl
         id.setCellValueFactory(new PropertyValueFactory<Movie, Integer>("movieID"));
         countryID.setCellValueFactory(new PropertyValueFactory<Movie, Integer>("countryID"));
         table_movie.setItems(movies);
+        tf_id.setText("0");
         setTextFieldFromTable();
 
     }
@@ -151,56 +153,67 @@ public class AdminMovieController extends BaseController implements Initializabl
         table_movie.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                Movie movie = table_movie.getItems().get(table_movie.getSelectionModel().getSelectedIndex());
-                tf_id.setText(String.valueOf(movie.getMovieID()));
-                tf_title.setText(movie.getTitle());
-                tf_awards.setText(movie.getAwards());
-                tf_commentCount.setText(String.valueOf(movie.getCommentCount()));
-                tf_countryID.setText(String.valueOf(movie.getCountryID()));
-                tf_directorID.setText(String.valueOf(movie.getDirectorID()));
-                tf_genre.setText(movie.getGenre());
-                tf_plot.setText(movie.getPlot());
-                tf_poster.setText(movie.getPoster());
-                tf_rate.setText(String.valueOf(movie.getRate()));
-                tf_rateCount.setText(String.valueOf(movie.getRateCount()));
-                tf_commentCount.setText(String.valueOf(movie.getCommentCount()));
-                tf_runtime.setText(movie.getRuntime());
-                tf_year.setText(String.valueOf(movie.getMovieYear()));
-                tf_released.setText(String.valueOf(movie.getReleased()));
+                if (table_movie.getSelectionModel().getSelectedIndex() > -1) {
+                    Movie movie = table_movie.getItems().get(table_movie.getSelectionModel().getSelectedIndex());
+                    tf_id.setText(String.valueOf(movie.getMovieID()));
+                    tf_title.setText(movie.getTitle());
+                    tf_awards.setText(movie.getAwards());
+                    tf_commentCount.setText(String.valueOf(movie.getCommentCount()));
+                    tf_countryID.setText(String.valueOf(movie.getCountryID()));
+                    tf_directorID.setText(String.valueOf(movie.getDirectorID()));
+                    tf_genre.setText(movie.getGenre());
+                    tf_plot.setText(movie.getPlot());
+                    tf_poster.setText(movie.getPoster());
+                    tf_rate.setText(String.valueOf(movie.getRate()));
+                    tf_rateCount.setText(String.valueOf(movie.getRateCount()));
+                    tf_commentCount.setText(String.valueOf(movie.getCommentCount()));
+                    tf_runtime.setText(movie.getRuntime());
+                    tf_year.setText(String.valueOf(movie.getMovieYear()));
+                    tf_released.setText(String.valueOf(movie.getReleased()));
+                }
             }
         });
     }
 
     @FXML
     void addMovie(MouseEvent event) {
-        Movie movie = new Movie(
-                tf_title.getText().replace("'", "^"),
-                Integer.parseInt(tf_year.getText()),
-                tf_released.getText().replace("'", "^"),
-                tf_runtime.getText().replace("'", "^"),
-                tf_genre.getText().replace("'", "^"),
-                Integer.parseInt(tf_directorID.getText()),
-                tf_plot.getText().replace("'", "^"),
-                Integer.parseInt(tf_countryID.getText()),
-                tf_awards.getText().replace("'", "^"),
-                tf_poster.getText().replace("'", "^"),
-                Double.parseDouble(tf_rate.getText()),
-                Integer.parseInt(tf_rateCount.getText()),
-                Integer.parseInt(tf_commentCount.getText())
-        );
-        movieManager.addMovie(movie);
-        movies.add(movie);
-
+        Movie movie = textFieldToMovie();
+        if (movie != null) {
+            movieManager.addMovie(movie);
+            movies = movieManager.getAllMovie();
+            table_movie.setItems(movies);
+        }
     }
+
 
     @FXML
     void deleteMovie(MouseEvent event) {
-
+        Movie movie = textFieldToMovie();
+        if (movie != null) {
+            movieManager.deleteMovie(movie);
+            movies = movieManager.getAllMovie();
+            table_movie.setItems(movies);
+        }
     }
 
     @FXML
     void updateMovie(MouseEvent event) {
+        Movie movie = textFieldToMovie();
+        if (movie != null) {
+            movieManager.updateMovie(movie);
+            movies = movieManager.getAllMovie();
+            table_movie.setItems(movies);
+        }
+    }
 
+    @FXML
+    void openAdminCountryScene(MouseEvent event) {
+        openStage(event, "adminCountry-view.fxml");
+    }
+
+    @FXML
+    void openAdminDirectorScene(MouseEvent event) {
+        openStage(event, "adminDirector-view.fxml");
     }
 
     @FXML
@@ -208,9 +221,35 @@ public class AdminMovieController extends BaseController implements Initializabl
         openStage(event, "admin-view.fxml");
     }
 
-    @FXML
-    void openHomePageScene(MouseEvent event) {
-        openStage(event, "homePage-view.fxml");
+    private Movie textFieldToMovie() {
+        Movie movie = null;
+        if (!tf_year.getText().isEmpty() && !tf_directorID.getText().isEmpty()
+                && !tf_countryID.getText().isEmpty() && !tf_rate.getText().isEmpty()
+                && !rateCount.getText().isEmpty() && !commentCount.getText().isEmpty()) {
+            try {
+                movie = new Movie(
+                        Integer.parseInt(tf_id.getText()),
+                        tf_title.getText().replace("'", "^"),
+                        Integer.parseInt(tf_year.getText()),
+                        tf_released.getText(),
+                        tf_runtime.getText().replace("'", "^"),
+                        tf_genre.getText().replace("'", "^"),
+                        Integer.parseInt(tf_directorID.getText()),
+                        tf_plot.getText().replace("'", "^"),
+                        Integer.parseInt(tf_countryID.getText()),
+                        tf_awards.getText().replace("'", "^"),
+                        tf_poster.getText().replace("'", "^"),
+                        Double.parseDouble(tf_rate.getText()),
+                        Integer.parseInt(tf_rateCount.getText()),
+                        Integer.parseInt(tf_commentCount.getText())
+                );
+            } catch (Exception e) {
+                FXAlert.showException(e, "Alanların doğru girildiğinden emin olun! Released örneği : 14-OCT-94");
+            }
+        } else {
+            FXAlert.showWarning("Lütfen boş alan bırakmayınız!");
+        }
+        return movie;
     }
 
 }

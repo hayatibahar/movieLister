@@ -5,6 +5,7 @@ import com.example.movielister.Data.Repository.UserTypeRepository;
 import com.example.movielister.Model.User;
 import com.example.movielister.util.FXAlert;
 import javafx.collections.ObservableList;
+
 import java.util.Optional;
 
 public class UserManager {
@@ -70,7 +71,7 @@ public class UserManager {
 
     public boolean userControl(User user) {
         return user.getNickname() == null || user.getPass() == null || user.getPass().equals("") || user.getNickname().equals("")
-                || userTypeManager.getUserTypeById(user.getUserTypeID()) != null
+                || userTypeManager.getUserTypeById(user.getUserTypeID()) == null
                 || userRepository.exists(user);
     }
 

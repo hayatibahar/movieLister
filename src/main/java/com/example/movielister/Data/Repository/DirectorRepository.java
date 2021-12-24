@@ -72,4 +72,8 @@ public class DirectorRepository implements Dao<Director> {
         }
         return null;
     }
+
+    public boolean exists(Director director) {
+        return CommonRepository.exists(String.format("SELECT * FROM director_tbl WHERE director = '%s'", director.getDirector()));
+    }
 }

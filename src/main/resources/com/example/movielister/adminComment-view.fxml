@@ -1,71 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="621.0" prefWidth="800.0" style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AdminCommentController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="621.0" prefWidth="800.0"
+            style="-fx-background-color: #121212;" styleClass="anchorPane" stylesheets="@main.css"
+            xmlns="http://javafx.com/javafx/16"
+            fx:controller="com.example.movielister.Controller.AdminCommentController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="800.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="623.0" layoutX="1.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="280.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="569.0" layoutX="277.0" layoutY="54.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="523.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="57.0" stroke="WHITE" strokeType="INSIDE"
+                 strokeWidth="3.0" width="800.0"/>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="623.0" layoutX="1.0" stroke="WHITE"
+                 strokeType="INSIDE" strokeWidth="3.0" width="280.0"/>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="569.0" layoutX="277.0" layoutY="54.0"
+                 stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="523.0"/>
       <Label layoutX="26.0" layoutY="5.0" text="Movie Lister" textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="44.0" />
+            <Font name="Times New Roman" size="44.0"/>
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="454.0" layoutY="16.0" text="Comment Panel" textAlignment="CENTER" textFill="WHITE">
+      <Label contentDisplay="CENTER" layoutX="454.0" layoutY="16.0" text="Comment Panel" textAlignment="CENTER"
+             textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="24.0" />
+            <Font name="Times New Roman" size="24.0"/>
          </font>
       </Label>
       <Label layoutX="14.0" layoutY="63.0" text="Admin Panel" textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="24.0" />
+            <Font name="Times New Roman" size="24.0"/>
          </font>
       </Label>
-      <Line endX="153.0" layoutX="113.0" layoutY="91.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
-      <Button layoutX="100.0" layoutY="449.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Update" />
-      <Button layoutX="185.0" layoutY="449.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Delete" />
-      <Button layoutX="15.0" layoutY="449.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Add" />
-      <TextField layoutX="13.0" layoutY="115.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="14.0" layoutY="99.0" text="Comment ID" textFill="WHITE" />
-      <TextField editable="false" layoutX="13.0" layoutY="157.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="14.0" layoutY="141.0" text="User ID" textFill="WHITE" />
-      <TextField editable="false" layoutX="14.0" layoutY="199.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="15.0" layoutY="183.0" text="Movie ID" textFill="WHITE" />
-      <TextField editable="false" layoutX="13.0" layoutY="241.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="14.0" layoutY="225.0" text="Title" textFill="WHITE" />
-      <TextField editable="false" layoutX="13.0" layoutY="283.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="14.0" layoutY="267.0" text="User Comment " textFill="WHITE" />
-      <TextField editable="false" layoutX="13.0" layoutY="325.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="14.0" layoutY="309.0" text="Comment Date" textFill="WHITE" />
-      <TextField editable="false" layoutX="13.0" layoutY="367.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="14.0" layoutY="351.0" text="Like Count" textFill="WHITE" />
-      <TextField editable="false" layoutX="14.0" layoutY="409.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="15.0" layoutY="393.0" text="Dislike Count" textFill="WHITE" />
-      <Button layoutX="49.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Home Page" />
-      <Button layoutX="142.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#openAdminPageScene" prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Admin Page" />
-      <Line endX="153.0" layoutX="115.0" layoutY="495.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
-      <Line endX="153.0" layoutX="115.0" layoutY="554.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
-      <Button layoutX="14.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="Movie Panel" />
-      <Button layoutX="187.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene" prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="User Panel" />
+      <Line endX="153.0" layoutX="113.0" layoutY="91.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0"/>
+      <Button layoutX="100.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#updateComment" prefHeight="35.0"
+              prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Update"/>
+      <Button layoutX="185.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#deleteComment" prefHeight="35.0"
+              prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Delete"/>
+      <Button layoutX="15.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#addComment" prefHeight="35.0"
+              prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Add"/>
+      <TextField fx:id="tf_commentID" editable="false" layoutX="13.0" layoutY="115.0" prefHeight="25.0"
+                 prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="99.0" text="Comment ID" textFill="WHITE"/>
+      <TextField fx:id="tf_userID" layoutX="13.0" layoutY="157.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="141.0" text="User ID" textFill="WHITE"/>
+      <TextField fx:id="tf_movieID" layoutX="14.0" layoutY="199.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="15.0" layoutY="183.0" text="Movie ID" textFill="WHITE"/>
+      <TextField fx:id="tf_title" layoutX="13.0" layoutY="241.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="225.0" text="Title" textFill="WHITE"/>
+      <TextField fx:id="tf_comment" layoutX="13.0" layoutY="283.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="267.0" text="User Comment " textFill="WHITE"/>
+      <TextField fx:id="tf_date" layoutX="13.0" layoutY="325.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="309.0" text="Comment Date" textFill="WHITE"/>
+      <TextField fx:id="tf_likeCount" layoutX="13.0" layoutY="367.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="351.0" text="Like Count" textFill="WHITE"/>
+      <TextField fx:id="tf_dislikeCount" layoutX="14.0" layoutY="409.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="15.0" layoutY="393.0" text="Dislike Count" textFill="WHITE"/>
+      <Button layoutX="49.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene"
+              prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Home Page"/>
+      <Button layoutX="142.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#openAdminPageScene"
+              prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Admin Page"/>
+      <Line endX="153.0" layoutX="115.0" layoutY="495.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0"/>
+      <Line endX="153.0" layoutX="115.0" layoutY="554.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0"/>
+      <Button layoutX="14.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#openAdminMovieScene"
+              prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="Movie Panel"/>
+      <Button layoutX="187.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#openAdminAccountScene"
+              prefHeight="35.0" styleClass="button2" stylesheets="@main.css" text="User Panel"/>
       <TableView fx:id="table_comment" layoutX="281.0" layoutY="56.0" prefHeight="563.0" prefWidth="516.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="Comment ID" />
-            <TableColumn prefWidth="75.0" text="UserID" />
-            <TableColumn prefWidth="75.0" text="MovieID" />
-            <TableColumn prefWidth="75.0" text="Title" />
-            <TableColumn prefWidth="75.0" text="UserComment" />
-            <TableColumn prefWidth="75.0" text="CommentDate" />
-            <TableColumn prefWidth="75.0" text="LikeCount" />
-            <TableColumn prefWidth="75.0" text="DislikeCount" />
+            <TableColumn fx:id="commentID" prefWidth="75.0" text="Comment ID"/>
+            <TableColumn fx:id="userID" prefWidth="75.0" text="UserID"/>
+            <TableColumn fx:id="movieID" prefWidth="75.0" text="MovieID"/>
+            <TableColumn fx:id="title" prefWidth="75.0" text="Title"/>
+            <TableColumn fx:id="comment" prefWidth="75.0" text="UserComment"/>
+            <TableColumn fx:id="date" prefWidth="75.0" text="CommentDate"/>
+            <TableColumn fx:id="likeCount" prefWidth="75.0" text="LikeCount"/>
+            <TableColumn fx:id="dislikeCount" prefWidth="75.0" text="DislikeCount"/>
          </columns>
       </TableView>
    </children>

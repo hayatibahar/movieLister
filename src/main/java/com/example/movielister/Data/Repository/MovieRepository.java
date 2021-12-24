@@ -48,7 +48,6 @@ public class MovieRepository implements Dao<Movie> {
                 movie.getTitle(), movie.getMovieYear(), movie.getReleased(), movie.getRuntime(), movie.getGenre(),
                 movie.getDirectorID(), movie.getPlot(), movie.getCountryID(), movie.getAwards(), movie.getPoster(), movie.getRate(),
                 movie.getRateCount(), movie.getCommentCount());
-
         DBUtil.dbExecuteUpdate(query);
     }
 

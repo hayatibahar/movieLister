@@ -47,7 +47,7 @@ public class UserRepository implements Dao<User> {
 
     @Override
     public void delete(User user) {
-        String query = String.format("DELETE FROM user_tbl userID = %d",
+        String query = String.format("DELETE FROM user_tbl WHERE userID = %d",
                 user.getUserID());
 
         DBUtil.dbExecuteUpdate(query);

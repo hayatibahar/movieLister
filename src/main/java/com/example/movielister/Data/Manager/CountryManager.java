@@ -20,9 +20,9 @@ public class CountryManager {
     }
 
     public void addCountry(Country country) {
-        if (country.getCountry() !=null && !countryRepository.getAll().contains(country)){
+        if (countryControl(country)) {
             countryRepository.insert(country);
-        }else{
+        } else {
             FXAlert.showWarning("Ülke kayıt edilemedi! Girilen değeri kontrol edin.");
         }
     }
@@ -35,9 +35,9 @@ public class CountryManager {
     }
 
     public void updateCountry(Country country) {
-        if (country.getCountry() !=null && !countryRepository.getAll().contains(country)){
+        if (countryControl(country)) {
             countryRepository.update(country);
-        }else{
+        } else {
             FXAlert.showWarning("Ülke güncellenemedi! Girilen değeri kontrol edin.");
         }
     }
@@ -56,5 +56,9 @@ public class CountryManager {
         }
         FXAlert.showWarning("Verilen id'ye sahip ülke bulunamadı!");
         return null;
+    }
+
+    public boolean countryControl(Country country) {
+        return country.getCountry() != null && !countryRepository.exists(country);
     }
 }
