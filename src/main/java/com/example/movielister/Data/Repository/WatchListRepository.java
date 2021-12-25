@@ -2,7 +2,7 @@ package com.example.movielister.Data.Repository;
 
 import com.example.movielister.Data.DBUtil;
 import com.example.movielister.Data.Dao.Dao;
-import com.example.movielister.Model.Country;
+import com.example.movielister.Model.Dto.WatchListDetail;
 import com.example.movielister.Model.WatchList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -96,5 +96,24 @@ public class WatchListRepository implements Dao<WatchList> {
             e.printStackTrace();
         }
         return watchLists;
+    }
+
+    public ObservableList<WatchListDetail> getAllDetailByUserID(int id) {
+        ObservableList<WatchListDetail> watchListDetails = FXCollections.observableArrayList();
+        String query = String.format("SELECT w.listID,m.title,r.rate,w.status from movie_tbl m,rate_tbl r,watchlist_tbl w WHERE r.userID = w.userID AND w.movieID = m.movieID AND w.userID = %d", id);
+        ResultSet resultSet = DBUtil.dbExecuteQuery(query);
+        try {
+            while (resultSet.next()) {
+                watchListDetails.add(new WatchListDetail(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getDouble(3),
+                        resultSet.getInt(4)
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return watchListDetails;
     }
 }

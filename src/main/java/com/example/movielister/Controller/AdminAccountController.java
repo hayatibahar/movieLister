@@ -106,6 +106,8 @@ public class AdminAccountController extends BaseController implements Initializa
         table_user.setItems(users);
         tf_userID.setText("0");
         setTextFieldFromTable();
+
+        // TODO USER TYPE EKRANI?
     }
 
     private void setTextFieldFromTable() {

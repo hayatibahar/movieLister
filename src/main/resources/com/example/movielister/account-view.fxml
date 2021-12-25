@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<AnchorPane prefHeight="424.0" prefWidth="608.0" style="-fx-background-color: #000000;" styleClass="anchorPane" stylesheets="@main.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.movielister.Controller.AccountController">
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="424.0" prefWidth="608.0"
+            style="-fx-background-color: #000000;" styleClass="anchorPane" stylesheets="@main.css"
+            xmlns="http://javafx.com/javafx/16" fx:controller="com.example.movielister.Controller.AccountController">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="62.0" layoutY="-1.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="608.0" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="424.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="200.0" />
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="366.0" layoutX="197.0" layoutY="58.0" smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="411.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="103.0" layoutX="50.0" layoutY="71.0" smooth="false" stroke="WHITE" strokeWidth="3.0" width="102.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="62.0" layoutY="-1.0" smooth="false"
+                   stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="608.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="424.0" smooth="false" stroke="WHITE"
+                   strokeType="INSIDE" strokeWidth="3.0" width="200.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="366.0" layoutX="197.0" layoutY="58.0"
+                   smooth="false" stroke="WHITE" strokeType="INSIDE" strokeWidth="3.0" width="411.0"/>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="103.0" layoutX="50.0" layoutY="71.0"
+                   smooth="false" stroke="WHITE" strokeWidth="3.0" width="102.0"/>
         <Label layoutX="22.0" layoutY="14.0" text="Movie Lister" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="30.0" />
+                <Font name="Times New Roman" size="30.0"/>
             </font>
         </Label>
         <Label layoutX="336.0" layoutY="17.0" text="Account Page" textFill="WHITE">
@@ -26,26 +29,75 @@
                 <Font name="Times New Roman" size="24.0" />
             </font>
         </Label>
-        <Text fill="WHITE" fontSmoothingType="LCD" layoutX="68.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nickname" textAlignment="CENTER">
+        <Text fx:id="txt_nickname" fill="WHITE" fontSmoothingType="LCD" layoutX="7.0" layoutY="190.0"
+              strokeType="OUTSIDE" strokeWidth="0.0" text="nickname" textAlignment="CENTER"
+              wrappingWidth="188.79995727539062">
             <font>
-                <Font name="Times New Roman" size="16.0" />
+                <Font name="Times New Roman" size="16.0"/>
             </font>
         </Text>
-        <Line endX="95.0" layoutX="102.0" layoutY="201.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
-        <Button layoutX="59.0" layoutY="384.0" mnemonicParsing="false" styleClass="button2" text="Home Page" />
-        <Line endX="95.0" layoutX="102.0" layoutY="371.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
-        <Button layoutX="46.0" layoutY="228.0" mnemonicParsing="false" styleClass="button2" text="Account Details" />
-        <Button layoutX="61.0" layoutY="271.0" mnemonicParsing="false" styleClass="button2" text="Watch List" />
-        <Button layoutX="53.0" layoutY="319.0" mnemonicParsing="false" styleClass="button2" text="Watched List" />
-        <Text fill="WHITE" fontSmoothingType="LCD" layoutX="336.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="bişiler" textAlignment="CENTER">
-            <font>
-                <Font name="Times New Roman" size="46.0" />
-            </font>
-        </Text>
-      <ImageView fitHeight="92.0" fitWidth="94.0" layoutX="55.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/images.png" />
-         </image>
-      </ImageView>
+        <Line endX="95.0" layoutX="102.0" layoutY="201.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0"/>
+        <Button layoutX="59.0" layoutY="384.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene"
+                styleClass="button2" text="Home Page"/>
+        <Line endX="95.0" layoutX="102.0" layoutY="371.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0"/>
+        <Button layoutX="46.0" layoutY="228.0" mnemonicParsing="false" onMouseClicked="#getAccountDetail"
+                styleClass="button2" text="Account Details"/>
+        <Button layoutX="61.0" layoutY="271.0" mnemonicParsing="false" onMouseClicked="#getWatchList"
+                styleClass="button2" text="Watch List"/>
+        <Button layoutX="53.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#getWatchedList"
+                styleClass="button2" text="Watched List"/>
+        <ImageView fitHeight="92.0" fitWidth="94.0" layoutX="55.0" layoutY="76.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@image/images.png"/>
+            </image>
+        </ImageView>
+        <TableView fx:id="table_watchList" layoutX="200.0" layoutY="61.0" prefHeight="360.0" prefWidth="405.0">
+            <columns>
+                <TableColumn fx:id="title" prefWidth="75.0" text="title"/>
+                <TableColumn fx:id="myRating" prefWidth="75.0" text="my rating"/>
+                <TableColumn fx:id="listID" prefWidth="75.0" text="listID" visible="false"/>
+            </columns>
+        </TableView>
+        <VBox fx:id="vb_accountDetail" layoutX="315.0" layoutY="101.0" prefHeight="222.0" prefWidth="175.0"
+              visible="false">
+            <children>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="nickname">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                </Text>
+                <TextField fx:id="tf_nickname">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                </TextField>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="password">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                </Text>
+                <TextField fx:id="tf_password">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                </TextField>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="password confirm">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                </Text>
+                <TextField fx:id="tf_passwordConfirm">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                </TextField>
+                <Button mnemonicParsing="false" onMouseClicked="#updateUser" styleClass="button2" text="Update">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
     </children>
 </AnchorPane>

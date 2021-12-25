@@ -7,7 +7,6 @@ import com.example.movielister.MovieListerApplication;
 import com.example.movielister.util.FXAlert;
 import com.example.movielister.util.RecyclerView;
 import com.example.movielister.util.RippleViewRow;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Service;
@@ -15,17 +14,17 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class HomePageController extends BaseController implements Initializable {
@@ -71,6 +70,9 @@ public class HomePageController extends BaseController implements Initializable 
         cb_genre.getSelectionModel().clearSelection();
         cb_year.getSelectionModel().clearSelection();
         cb_rate.getSelectionModel().clearSelection();
+        tf_search.clear();
+        service.title = "";
+        service.restart();
     }
 
     @FXML

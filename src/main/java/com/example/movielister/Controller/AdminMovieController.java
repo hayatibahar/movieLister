@@ -8,14 +8,13 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.sql.Timestamp;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class AdminMovieController extends BaseController implements Initializable {
@@ -112,7 +111,7 @@ public class AdminMovieController extends BaseController implements Initializabl
     private TextField tf_rateCount;
 
     @FXML
-    private TextField tf_released;
+    private DatePicker dp_released;
 
     @FXML
     private TextField tf_runtime;
@@ -169,7 +168,7 @@ public class AdminMovieController extends BaseController implements Initializabl
                     tf_commentCount.setText(String.valueOf(movie.getCommentCount()));
                     tf_runtime.setText(movie.getRuntime());
                     tf_year.setText(String.valueOf(movie.getMovieYear()));
-                    tf_released.setText(String.valueOf(movie.getReleased()));
+                    dp_released.setValue(Timestamp.valueOf(movie.getReleased()).toLocalDateTime().toLocalDate());
                 }
             }
         });
@@ -231,7 +230,7 @@ public class AdminMovieController extends BaseController implements Initializabl
                         Integer.parseInt(tf_id.getText()),
                         tf_title.getText().replace("'", "^"),
                         Integer.parseInt(tf_year.getText()),
-                        tf_released.getText(),
+                        dp_released.getValue().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy")),
                         tf_runtime.getText().replace("'", "^"),
                         tf_genre.getText().replace("'", "^"),
                         Integer.parseInt(tf_directorID.getText()),

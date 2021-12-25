@@ -8,10 +8,6 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/*TODO
-    Button - Director & Country butonlarına işlevleri eklenecek.
-*/
-
 
 public class AdminController extends BaseController implements Initializable {
 

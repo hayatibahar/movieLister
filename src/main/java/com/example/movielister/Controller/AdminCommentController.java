@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -15,11 +16,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.sql.Timestamp;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class AdminCommentController extends BaseController implements Initializable {
 
-    private CommentManager commentManager = new CommentManager(new CommentRepository());
+    private final CommentManager commentManager = new CommentManager(new CommentRepository());
 
     @FXML
     private TableColumn<Comment, String> comment;
@@ -55,9 +58,6 @@ public class AdminCommentController extends BaseController implements Initializa
     private TextField tf_commentID;
 
     @FXML
-    private TextField tf_date;
-
-    @FXML
     private TextField tf_dislikeCount;
 
     @FXML
@@ -71,6 +71,9 @@ public class AdminCommentController extends BaseController implements Initializa
 
     @FXML
     private TextField tf_userID;
+
+    @FXML
+    private DatePicker dp_commentDate;
 
     private ObservableList<Comment> comments;
 
@@ -153,7 +156,7 @@ public class AdminCommentController extends BaseController implements Initializa
                     tf_movieID.setText(String.valueOf(comment.getMovieID()));
                     tf_title.setText(comment.getTitle());
                     tf_comment.setText(comment.getUserComment());
-                    tf_date.setText(comment.getCommentDate());
+                    dp_commentDate.setValue(Timestamp.valueOf(comment.getCommentDate()).toLocalDateTime().toLocalDate());
                     tf_likeCount.setText(String.valueOf(comment.getLikeCount()));
                     tf_dislikeCount.setText(String.valueOf(comment.getDislikeCount()));
 
@@ -165,14 +168,14 @@ public class AdminCommentController extends BaseController implements Initializa
 
     private Comment textFieldToComment() {
         Comment comment = null;
-        if (!tf_title.getText().isEmpty() && !tf_comment.getText().isEmpty() && !tf_date.getText().isEmpty()) {
+        if (!tf_title.getText().isEmpty() && !tf_comment.getText().isEmpty()) {
             try {
                 comment = new Comment(Integer.parseInt(tf_commentID.getText()),
                         Integer.parseInt(tf_userID.getText()),
                         Integer.parseInt(tf_movieID.getText()),
                         tf_title.getText(),
                         tf_comment.getText(),
-                        tf_date.getText(),
+                        dp_commentDate.getValue().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy")),
                         Integer.parseInt(tf_likeCount.getText()),
                         Integer.parseInt(tf_dislikeCount.getText())
                 );

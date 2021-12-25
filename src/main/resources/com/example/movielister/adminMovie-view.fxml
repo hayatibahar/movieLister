@@ -23,9 +23,10 @@
                 <Font name="Times New Roman" size="44.0"/>
             </font>
         </Label>
-        <Label contentDisplay="CENTER" layoutX="478.0" layoutY="16.0" text="Movie Panel" textAlignment="CENTER" textFill="WHITE">
+        <Label contentDisplay="CENTER" layoutX="478.0" layoutY="16.0" text="Movie Panel" textAlignment="CENTER"
+               textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="24.0" />
+                <Font name="Times New Roman" size="24.0"/>
             </font>
         </Label>
         <Label layoutX="14.0" layoutY="63.0" text="Admin Panel" textFill="WHITE">
@@ -36,7 +37,6 @@
         <Line endX="153.0" layoutX="113.0" layoutY="91.0" startX="-99.0" stroke="WHITE" strokeWidth="2.0" />
         <TextField fx:id="tf_title" layoutX="13.0" layoutY="156.0" prefHeight="25.0" prefWidth="254.0" />
         <TextField fx:id="tf_year" layoutX="13.0" layoutY="198.0" prefHeight="25.0" prefWidth="254.0" />
-        <TextField fx:id="tf_released" layoutX="13.0" layoutY="240.0" prefHeight="25.0" prefWidth="254.0" />
         <TextField fx:id="tf_runtime" layoutX="13.0" layoutY="282.0" prefHeight="25.0" prefWidth="254.0" />
         <TextField fx:id="tf_genre" layoutX="13.0" layoutY="324.0" prefHeight="25.0" prefWidth="254.0" />
         <TextField fx:id="tf_directorID" layoutX="13.0" layoutY="366.0" prefHeight="25.0" prefWidth="254.0" />
@@ -65,16 +65,16 @@
                 <TableColumn fx:id="awards" prefWidth="75.0" text="Awards" />
                 <TableColumn fx:id="poster" prefWidth="75.0" text="Poster" />
                 <TableColumn fx:id="rate" prefWidth="75.0" text="Rate" />
-                <TableColumn fx:id="rateCount" prefWidth="75.0" text="RateCount" />
-                <TableColumn fx:id="commentCount" prefWidth="75.0" text="CommentCount" />
+                <TableColumn fx:id="rateCount" prefWidth="75.0" text="RateCount"/>
+                <TableColumn fx:id="commentCount" prefWidth="75.0" text="CommentCount"/>
             </columns>
         </TableView>
-        <TextField fx:id="tf_id" editable="false" layoutX="13.0" layoutY="114.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="14.0" layoutY="98.0" text="Movie ID" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="140.0" text="Movie Title" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="182.0" text="Movie Year" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="224.0" text="Released" textFill="WHITE" />
-      <Label layoutX="14.0" layoutY="266.0" text="Runtime" textFill="WHITE" />
+        <TextField fx:id="tf_id" editable="false" layoutX="13.0" layoutY="114.0" prefHeight="25.0" prefWidth="254.0"/>
+        <Label layoutX="14.0" layoutY="98.0" text="Movie ID" textFill="WHITE"/>
+        <Label layoutX="14.0" layoutY="140.0" text="Movie Title" textFill="WHITE"/>
+        <Label layoutX="14.0" layoutY="182.0" text="Movie Year" textFill="WHITE"/>
+        <Label layoutX="14.0" layoutY="224.0" text="Released" textFill="WHITE"/>
+        <Label layoutX="14.0" layoutY="266.0" text="Runtime" textFill="WHITE"/>
         <Label layoutX="14.0" layoutY="308.0" text="Genre" textFill="WHITE"/>
         <Label layoutX="15.0" layoutY="392.0" text="Plot" textFill="WHITE"/>
         <Label layoutX="15.0" layoutY="350.0" text="Director ID" textFill="WHITE"/>
@@ -89,5 +89,6 @@
                 prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Director P."/>
         <Button layoutX="184.0" layoutY="772.0" mnemonicParsing="false" onMouseClicked="#openAdminCountryScene"
                 prefHeight="26.0" prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Country P."/>
+        <DatePicker fx:id="dp_released" layoutX="13.0" layoutY="240.0" prefHeight="26.0" prefWidth="254.0"/>
     </children>
 </AnchorPane>

@@ -3,6 +3,7 @@ package com.example.movielister.Data.Manager;
 import com.example.movielister.Data.Repository.MovieRepository;
 import com.example.movielister.Data.Repository.UserRepository;
 import com.example.movielister.Data.Repository.WatchListRepository;
+import com.example.movielister.Model.Dto.WatchListDetail;
 import com.example.movielister.Model.User;
 import com.example.movielister.Model.WatchList;
 import com.example.movielister.util.FXAlert;
@@ -65,8 +66,18 @@ public class WatchListManager {
     }
 
     public ObservableList<WatchList> getAllByUserID(int id) {
-        if(watchListRepository.getById(id) != null){
-            return watchListRepository.getAllByUserID(id);
+        ObservableList<WatchList> watchList = watchListRepository.getAllByUserID(id);
+        if (watchList != null) {
+            return watchList;
+        }
+        FXAlert.showWarning("İzleme listeniz boş durumda.");
+        return null;
+    }
+
+    public ObservableList<WatchListDetail> getAllDetailByUserID(int id) {
+        ObservableList<WatchListDetail> watchList = watchListRepository.getAllDetailByUserID(id);
+        if (watchList != null) {
+            return watchList;
         }
         FXAlert.showWarning("İzleme listeniz boş durumda.");
         return null;
