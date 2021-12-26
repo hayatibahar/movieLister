@@ -153,7 +153,35 @@
     -fx-border-color: derive(-fx-pie-color, 1%);
     -fx-border-width: 0px;
 }
-.linear-grad
-{
+
+.linear-grad {
     -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+}
+
+.toggle-button1 {
+    -fx-base: rgba(0, 255, 247, 0.91);
+    -fx-cursor: hand;
+    -fx-graphic: url('image/arrow.png');
+    -fx-rotate: 180;
+    -fx-background-radius: 20;
+}
+
+.toggle-button1:selected {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(0, 255, 247, 0.76);
+    -fx-background-radius: 20;
+}
+
+.toggle-button2 {
+    -fx-base: rgba(0, 255, 247, 0.91);
+    -fx-cursor: hand;
+    -fx-graphic: url('image/arrow.png');
+    -fx-rotate: 360;
+    -fx-background-radius: 20;
+}
+
+.toggle-button2:selected {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(0, 255, 247, 0.76);
+    -fx-background-radius: 20;
 }

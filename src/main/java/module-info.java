@@ -13,6 +13,7 @@ module com.example.movielister {
     exports com.example.movielister.Controller;
     opens com.example.movielister.Controller to javafx.fxml;
     opens com.example.movielister.Model to javafx.base;
+    opens com.example.movielister.Model.Dto to javafx.base;
     opens com.example.movielister.util to javafx.fxml;
 
 }

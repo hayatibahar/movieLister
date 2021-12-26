@@ -100,7 +100,7 @@ public class WatchListRepository implements Dao<WatchList> {
 
     public ObservableList<WatchListDetail> getAllDetailByUserID(int id) {
         ObservableList<WatchListDetail> watchListDetails = FXCollections.observableArrayList();
-        String query = String.format("SELECT w.listID,m.title,r.rate,w.status from movie_tbl m,rate_tbl r,watchlist_tbl w WHERE r.userID = w.userID AND w.movieID = m.movieID AND w.userID = %d", id);
+        String query = String.format("SELECT w.listID,m.title, case when r.rate is null then 0 else r.rate end as rate,w.status from watchlist_tbl w LEFT JOIN rate_tbl r on w.userID = r.userID LEFT JOIN movie_tbl m on w.movieID = m.movieID WHERE w.userID = %d", id);
         ResultSet resultSet = DBUtil.dbExecuteQuery(query);
         try {
             while (resultSet.next()) {

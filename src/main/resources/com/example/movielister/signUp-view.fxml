@@ -36,22 +36,24 @@
                 <Font name="Times New Roman" size="16.0" />
             </font>
         </Label>
-        <Button fx:id="btn_signUp" layoutX="169.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#signUp" prefHeight="35.0" prefWidth="77.0" styleClass="button2" text="Sign Up" textAlignment="CENTER">
+        <Button fx:id="btn_signUp" layoutX="169.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#signUp"
+                prefHeight="35.0" prefWidth="77.0" styleClass="button2" text="Sign Up" textAlignment="CENTER">
             <font>
-                <Font name="Times New Roman" size="14.0" />
+                <Font name="Times New Roman" size="14.0"/>
             </font>
         </Button>
         <Label layoutX="27.0" layoutY="239.0" text="Password Confirm" textAlignment="CENTER" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="16.0" />
+                <Font name="Times New Roman" size="16.0"/>
             </font>
         </Label>
-        <ImageView fitHeight="35.0" fitWidth="54.0" layoutX="27.0" layoutY="300.0" onMouseClicked="#openLoginScene" pickOnBounds="true" preserveRatio="true">
+        <TextField fx:id="tf_pass" layoutX="26.0" layoutY="202.0" prefHeight="26.0" prefWidth="220.0"/>
+        <TextField fx:id="tf_passConfirm" layoutX="26.0" layoutY="258.0" prefHeight="26.0" prefWidth="220.0"/>
+        <ImageView fx:id="iv_back" fitHeight="32.0" fitWidth="32.0" layoutX="27.0" layoutY="302.0"
+                   onMouseClicked="#openLoginScene" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@image/back-button.png" />
+                <Image url="@image/back-button.png"/>
             </image>
         </ImageView>
-        <TextField fx:id="tf_pass" layoutX="26.0" layoutY="202.0" prefHeight="26.0" prefWidth="220.0" />
-        <TextField fx:id="tf_passConfirm" layoutX="26.0" layoutY="258.0" prefHeight="26.0" prefWidth="220.0" />
     </children>
 </AnchorPane>

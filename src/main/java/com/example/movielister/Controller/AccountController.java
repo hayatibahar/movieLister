@@ -90,6 +90,7 @@ public class AccountController extends BaseController implements Initializable {
         title.setCellValueFactory(new PropertyValueFactory<WatchListDetail, String>("title"));
         myRating.setCellValueFactory(new PropertyValueFactory<WatchListDetail, Double>("rate"));
         listID.setCellValueFactory(new PropertyValueFactory<WatchListDetail, Integer>("listID"));
+        title.setPrefWidth(250.0);
         table_watchList.setItems(details);
     }
 

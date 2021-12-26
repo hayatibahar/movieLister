@@ -111,7 +111,7 @@ public class HomePageController extends BaseController implements Initializable 
     }
 
 
-    public static class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
+    public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         @Override
         public RecyclerView.ViewRow call(ListView param) {
             return new RippleViewRow(this);
@@ -132,8 +132,9 @@ public class HomePageController extends BaseController implements Initializable 
             holder.lbl_year.setText(String.valueOf(movie.getMovieYear()));
             Image img = new Image(movie.getPoster());
             holder.iv_poster.setImage(img);
-            // TODO FİLM YORUM EKRANI AÇILACAK & YORUM İTEM YAPILACAK
             holder.getView().setOnMouseClicked(mouseEvent -> {
+                DataPassController.movie = movie;
+                openStage(mouseEvent, "movieForum-view.fxml");
 
             });
         }
