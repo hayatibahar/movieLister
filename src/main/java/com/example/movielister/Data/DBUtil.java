@@ -17,7 +17,6 @@ public class DBUtil {
         try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
             FXAlert.showException(e, "JDBC Driver bağlantı sırasında hata!");
 
         }
@@ -26,7 +25,6 @@ public class DBUtil {
             conn = DriverManager.getConnection(connStr, user, password);
         } catch (SQLException e) {
             FXAlert.showException(e, "Database connection sırasında hata!");
-            e.printStackTrace();
         }
     }
 
@@ -36,13 +34,12 @@ public class DBUtil {
                 conn.close();
             }
         } catch (Exception e) {
-            e.printStackTrace();
             FXAlert.showException(e, "Database disconnect sırasında hata!");
         }
 
     }
 
-    public static ResultSet dbExecuteQuery(String queryStmt){
+    public static ResultSet dbExecuteQuery(String queryStmt) {
         Statement stmt = null;
         ResultSet resultSet = null;
         CachedRowSet crs = null;
@@ -57,7 +54,6 @@ public class DBUtil {
             crs = RowSetProvider.newFactory().createCachedRowSet();
             crs.populate(resultSet);
         } catch (SQLException e) {
-            e.printStackTrace();
             FXAlert.showException(e, "Execute query sırasında hata!");
 
         } finally {
@@ -65,7 +61,6 @@ public class DBUtil {
                 try {
                     resultSet.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
                     FXAlert.showException(e, "Resultset kapatılırken hata!");
                 }
             }
@@ -73,7 +68,6 @@ public class DBUtil {
                 try {
                     stmt.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
                     FXAlert.showException(e, "Statement kapatılırken hata!");
                 }
             }
@@ -83,7 +77,7 @@ public class DBUtil {
     }
 
     //DB Execute Update (For Update/Insert/Delete) Operation
-    public static void dbExecuteUpdate(String sqlStmt){
+    public static void dbExecuteUpdate(String sqlStmt) {
         Statement stmt = null;
         try {
             dbConnect();
@@ -91,14 +85,12 @@ public class DBUtil {
             stmt = conn.createStatement();
             stmt.executeUpdate(sqlStmt);
         } catch (SQLException e) {
-            e.printStackTrace();
             FXAlert.showException(e, "Execute update sırasında hata!");
         } finally {
             if (stmt != null) {
                 try {
                     stmt.close();
                 } catch (SQLException e) {
-                    e.printStackTrace();
                     FXAlert.showException(e, "Statement kapatılırken hata!");
                 }
             }

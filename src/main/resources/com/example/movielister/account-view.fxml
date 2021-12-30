@@ -26,7 +26,7 @@
         </Label>
         <Label layoutX="336.0" layoutY="17.0" text="Account Page" textFill="WHITE">
             <font>
-                <Font name="Times New Roman" size="24.0" />
+                <Font name="Times New Roman" size="24.0"/>
             </font>
         </Label>
         <Text fx:id="txt_nickname" fill="WHITE" fontSmoothingType="LCD" layoutX="7.0" layoutY="190.0"
@@ -67,7 +67,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </VBox.margin>
                 </Text>
-                <TextField fx:id="tf_nickname">
+                <TextField fx:id="tf_nickname" editable="false">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </VBox.margin>

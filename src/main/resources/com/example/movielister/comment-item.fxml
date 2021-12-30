@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" styleClass="anchorPane" stylesheets="@main.css"
+            xmlns="http://javafx.com/javafx/16">
+    <children>
+        <VBox>
+            <children>
+                <Label fx:id="lbl_title" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font name="Times New Roman Bold" size="16.0"/>
+                    </font>
+                </Label>
+                <TextArea fx:id="ta_comment" editable="false" prefHeight="125.0" wrapText="true"/>
+                <HBox alignment="CENTER_RIGHT">
+                    <children>
+                        <Label fx:id="lbl_user" opacity="0.8" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="lbl_date" opacity="0.8" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

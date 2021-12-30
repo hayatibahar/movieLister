@@ -39,7 +39,6 @@ public class SignUpController extends BaseController {
     @FXML
     void signUp(MouseEvent event) {
         if (tf_pass.getText().equals(tf_passConfirm.getText())) {
-            // TODO USER TYPE DEĞİŞTİR
             User user = new User(tf_nickname.getText(), tf_pass.getText(), 1);
             userManager.addUser(user);
         } else {

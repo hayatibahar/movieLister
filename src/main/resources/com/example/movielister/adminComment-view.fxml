@@ -38,22 +38,18 @@
               prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Delete"/>
       <Button layoutX="15.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#addComment" prefHeight="35.0"
               prefWidth="83.0" styleClass="button2" stylesheets="@main.css" text="Add"/>
-      <TextField fx:id="tf_commentID" editable="false" layoutX="13.0" layoutY="115.0" prefHeight="25.0"
+      <TextField fx:id="tf_commentID" editable="false" layoutX="13.0" layoutY="157.0" prefHeight="25.0"
                  prefWidth="254.0"/>
-      <Label layoutX="14.0" layoutY="99.0" text="Comment ID" textFill="WHITE"/>
-      <TextField fx:id="tf_userID" layoutX="13.0" layoutY="157.0" prefHeight="25.0" prefWidth="254.0"/>
-      <Label layoutX="14.0" layoutY="141.0" text="User ID" textFill="WHITE"/>
-      <TextField fx:id="tf_movieID" layoutX="14.0" layoutY="199.0" prefHeight="25.0" prefWidth="254.0"/>
-      <Label layoutX="15.0" layoutY="183.0" text="Movie ID" textFill="WHITE"/>
-      <TextField fx:id="tf_title" layoutX="13.0" layoutY="241.0" prefHeight="25.0" prefWidth="254.0"/>
-      <Label layoutX="14.0" layoutY="225.0" text="Title" textFill="WHITE"/>
-      <TextField fx:id="tf_comment" layoutX="13.0" layoutY="283.0" prefHeight="25.0" prefWidth="254.0"/>
-      <Label layoutX="14.0" layoutY="267.0" text="User Comment " textFill="WHITE"/>
-      <Label layoutX="14.0" layoutY="309.0" text="Comment Date" textFill="WHITE"/>
-      <TextField fx:id="tf_likeCount" layoutX="13.0" layoutY="367.0" prefHeight="25.0" prefWidth="254.0"/>
-      <Label layoutX="14.0" layoutY="351.0" text="Like Count" textFill="WHITE"/>
-      <TextField fx:id="tf_dislikeCount" layoutX="14.0" layoutY="409.0" prefHeight="25.0" prefWidth="254.0"/>
-      <Label layoutX="15.0" layoutY="393.0" text="Dislike Count" textFill="WHITE"/>
+      <Label layoutX="14.0" layoutY="141.0" text="Comment ID" textFill="WHITE"/>
+      <TextField fx:id="tf_userID" layoutX="13.0" layoutY="199.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="183.0" text="User ID" textFill="WHITE"/>
+      <TextField fx:id="tf_movieID" layoutX="14.0" layoutY="241.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="15.0" layoutY="225.0" text="Movie ID" textFill="WHITE"/>
+      <TextField fx:id="tf_title" layoutX="13.0" layoutY="283.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="267.0" text="Title" textFill="WHITE"/>
+      <TextField fx:id="tf_comment" layoutX="13.0" layoutY="325.0" prefHeight="25.0" prefWidth="254.0"/>
+      <Label layoutX="14.0" layoutY="309.0" text="User Comment " textFill="WHITE"/>
+      <Label layoutX="14.0" layoutY="351.0" text="Comment Date" textFill="WHITE"/>
       <Button layoutX="49.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#openHomePageScene"
               prefHeight="35.0" prefWidth="91.0" styleClass="button2" stylesheets="@main.css" text="Home Page"/>
       <Button layoutX="142.0" layoutY="573.0" mnemonicParsing="false" onMouseClicked="#openAdminPageScene"
@@ -72,10 +68,8 @@
             <TableColumn fx:id="title" prefWidth="75.0" text="Title"/>
             <TableColumn fx:id="comment" prefWidth="75.0" text="UserComment"/>
             <TableColumn fx:id="date" prefWidth="75.0" text="CommentDate"/>
-            <TableColumn fx:id="likeCount" prefWidth="75.0" text="LikeCount"/>
-            <TableColumn fx:id="dislikeCount" prefWidth="75.0" text="DislikeCount"/>
          </columns>
       </TableView>
-      <DatePicker fx:id="dp_commentDate" layoutX="13.0" layoutY="325.0" prefHeight="26.0" prefWidth="254.0"/>
+      <DatePicker fx:id="dp_commentDate" layoutX="13.0" layoutY="367.0" prefHeight="26.0" prefWidth="254.0"/>
    </children>
 </AnchorPane>

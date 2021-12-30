@@ -125,8 +125,6 @@ public class AccountController extends BaseController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         txt_nickname.setText(DataPassController.user.getNickname());
-
-        // TODO VİEW'E BUTONLAR EKLENECEK VE KODLARI EKLENECEK
     }
 
 

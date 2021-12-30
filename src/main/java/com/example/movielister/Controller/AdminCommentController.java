@@ -34,12 +34,6 @@ public class AdminCommentController extends BaseController implements Initializa
     private TableColumn<Comment, String> date;
 
     @FXML
-    private TableColumn<Comment, Integer> dislikeCount;
-
-    @FXML
-    private TableColumn<Comment, Integer> likeCount;
-
-    @FXML
     private TableColumn<Comment, Integer> movieID;
 
     @FXML
@@ -56,12 +50,6 @@ public class AdminCommentController extends BaseController implements Initializa
 
     @FXML
     private TextField tf_commentID;
-
-    @FXML
-    private TextField tf_dislikeCount;
-
-    @FXML
-    private TextField tf_likeCount;
 
     @FXML
     private TextField tf_movieID;
@@ -137,8 +125,6 @@ public class AdminCommentController extends BaseController implements Initializa
         title.setCellValueFactory(new PropertyValueFactory<Comment, String>("title"));
         comment.setCellValueFactory(new PropertyValueFactory<Comment, String>("userComment"));
         date.setCellValueFactory(new PropertyValueFactory<Comment, String>("commentDate"));
-        likeCount.setCellValueFactory(new PropertyValueFactory<Comment, Integer>("likeCount"));
-        dislikeCount.setCellValueFactory(new PropertyValueFactory<Comment, Integer>("dislikeCount"));
         table_comment.setItems(comments);
         tf_commentID.setText("0");
         setTextFieldFromTable();
@@ -157,8 +143,6 @@ public class AdminCommentController extends BaseController implements Initializa
                     tf_title.setText(comment.getTitle());
                     tf_comment.setText(comment.getUserComment());
                     dp_commentDate.setValue(Timestamp.valueOf(comment.getCommentDate()).toLocalDateTime().toLocalDate());
-                    tf_likeCount.setText(String.valueOf(comment.getLikeCount()));
-                    tf_dislikeCount.setText(String.valueOf(comment.getDislikeCount()));
 
                 }
             }
@@ -175,9 +159,7 @@ public class AdminCommentController extends BaseController implements Initializa
                         Integer.parseInt(tf_movieID.getText()),
                         tf_title.getText(),
                         tf_comment.getText(),
-                        dp_commentDate.getValue().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy")),
-                        Integer.parseInt(tf_likeCount.getText()),
-                        Integer.parseInt(tf_dislikeCount.getText())
+                        dp_commentDate.getValue().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"))
                 );
             } catch (Exception e) {
                 FXAlert.showException(e, "Alanların doğru girildiğinden emin olun!");

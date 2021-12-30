@@ -7,28 +7,22 @@ public class Comment implements IEntity{
     String title;
     String userComment;
     String commentDate;
-    int likeCount;
-    int dislikeCount;
 
-    public Comment(int commentID, int userID, int movieID, String title, String userComment, String commentDate, int likeCount, int dislikeCount) {
+    public Comment(int commentID, int userID, int movieID, String title, String userComment, String commentDate) {
         this.commentID = commentID;
         this.userID = userID;
         this.movieID = movieID;
         this.title = title;
         this.userComment = userComment;
         this.commentDate = commentDate;
-        this.likeCount = likeCount;
-        this.dislikeCount = dislikeCount;
     }
 
-    public Comment(int userID, int movieID, String title, String userComment, String commentDate, int likeCount, int dislikeCount) {
+    public Comment(int userID, int movieID, String title, String userComment, String commentDate) {
         this.userID = userID;
         this.movieID = movieID;
         this.title = title;
         this.userComment = userComment;
         this.commentDate = commentDate;
-        this.likeCount = likeCount;
-        this.dislikeCount = dislikeCount;
     }
 
     public int getCommentID() {
@@ -79,19 +73,4 @@ public class Comment implements IEntity{
         this.commentDate = commentDate;
     }
 
-    public int getLikeCount() {
-        return likeCount;
-    }
-
-    public void setLikeCount(int likeCount) {
-        this.likeCount = likeCount;
-    }
-
-    public int getDislikeCount() {
-        return dislikeCount;
-    }
-
-    public void setDislikeCount(int dislikeCount) {
-        this.dislikeCount = dislikeCount;
-    }
 }

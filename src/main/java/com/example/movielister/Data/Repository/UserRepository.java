@@ -40,7 +40,7 @@ public class UserRepository implements Dao<User> {
     @Override
     public void update(User user) {
         String query = String.format("UPDATE user_tbl SET nickname = '%s',pass = '%s', userTypeID = %d WHERE userID = %d",
-                user.getNickname(), user.getPass(), user.getUserTypeID(),user.getUserID());
+                user.getNickname(), user.getPass(), user.getUserTypeID(), user.getUserID());
 
         DBUtil.dbExecuteUpdate(query);
     }

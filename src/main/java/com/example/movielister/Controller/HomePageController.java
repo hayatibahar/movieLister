@@ -1,12 +1,16 @@
 package com.example.movielister.Controller;
 
+import com.example.movielister.Data.Manager.DirectorManager;
 import com.example.movielister.Data.Manager.MovieManager;
+import com.example.movielister.Data.Repository.DirectorRepository;
 import com.example.movielister.Data.Repository.MovieRepository;
+import com.example.movielister.Model.Director;
 import com.example.movielister.Model.Movie;
 import com.example.movielister.MovieListerApplication;
 import com.example.movielister.util.FXAlert;
 import com.example.movielister.util.RecyclerView;
 import com.example.movielister.util.RippleViewRow;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Service;
@@ -29,9 +33,10 @@ import java.util.stream.Collectors;
 
 public class HomePageController extends BaseController implements Initializable {
 
+    private final MovieService service = new MovieService();
+    DirectorManager directorManager = new DirectorManager(new DirectorRepository());
     @FXML
     private AnchorPane ap_homePage;
-    private final MovieService service = new MovieService();
     @FXML
     private TextField tf_search;
     @FXML
@@ -45,6 +50,7 @@ public class HomePageController extends BaseController implements Initializable 
     @FXML
     private RecyclerView<Movie> items;
     private ObservableList<Movie> movies;
+    private ObservableList<Director> directors;
     private MovieManager movieManager;
 
     @FXML
@@ -67,12 +73,16 @@ public class HomePageController extends BaseController implements Initializable 
 
     @FXML
     void resetComboBox(MouseEvent event) {
-        cb_genre.getSelectionModel().clearSelection();
-        cb_year.getSelectionModel().clearSelection();
-        cb_rate.getSelectionModel().clearSelection();
-        tf_search.clear();
-        service.title = "";
-        service.restart();
+        if (!cb_rate.getSelectionModel().isEmpty() &&
+                !cb_genre.getSelectionModel().isEmpty() &&
+                !cb_year.getSelectionModel().isEmpty()) {
+            cb_genre.getSelectionModel().clearSelection();
+            cb_year.getSelectionModel().clearSelection();
+            cb_rate.getSelectionModel().clearSelection();
+            tf_search.clear();
+            service.title = "";
+            service.restart();
+        }
     }
 
     @FXML
@@ -95,12 +105,14 @@ public class HomePageController extends BaseController implements Initializable 
             service.title = "";
             service.restart();
         }
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         movieManager = new MovieManager(new MovieRepository());
         movies = movieManager.getAllMovie();
+        directors = directorManager.getAllDirector();
         Adapter adapter = new Adapter();
         items.setAdapter(adapter);
         items.getItems().addAll(movies);
@@ -126,16 +138,19 @@ public class HomePageController extends BaseController implements Initializable 
         @Override
         public void onBindViewHolder(Adapter.Holder holder, Object item) {
             Movie movie = (Movie) item;
-            holder.lbl_movieTitle.setText(movie.getTitle());
-            holder.lbl_director.setText(String.valueOf(movie.getDirectorID()));
-            holder.lbl_rate.setText(String.valueOf(movie.getRate()));
-            holder.lbl_year.setText(String.valueOf(movie.getMovieYear()));
             Image img = new Image(movie.getPoster());
-            holder.iv_poster.setImage(img);
+
+            Platform.runLater(() -> {
+                holder.lbl_movieTitle.setText(movie.getTitle());
+                holder.lbl_director.setText(directors.stream().filter(director -> director.getDirectorID() == movie.getDirectorID()).findFirst().get().getDirector());
+                holder.lbl_rate.setText(String.valueOf(movie.getRate()));
+                holder.lbl_year.setText(String.valueOf(movie.getMovieYear()));
+                holder.iv_poster.setImage(img);
+            });
+
             holder.getView().setOnMouseClicked(mouseEvent -> {
                 DataPassController.movie = movie;
                 openStage(mouseEvent, "movieForum-view.fxml");
-
             });
         }
 
@@ -182,6 +197,7 @@ public class HomePageController extends BaseController implements Initializable 
                 protected void succeeded() {
                     items.getItems().clear();
                     items.getItems().addAll(getValue());
+
                 }
 
                 @Override

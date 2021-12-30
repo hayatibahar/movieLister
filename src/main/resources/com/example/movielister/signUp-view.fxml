@@ -50,6 +50,7 @@
         <TextField fx:id="tf_pass" layoutX="26.0" layoutY="202.0" prefHeight="26.0" prefWidth="220.0"/>
         <TextField fx:id="tf_passConfirm" layoutX="26.0" layoutY="258.0" prefHeight="26.0" prefWidth="220.0"/>
         <ImageView fx:id="iv_back" fitHeight="32.0" fitWidth="32.0" layoutX="27.0" layoutY="302.0"
+                   styleClass="imageView"
                    onMouseClicked="#openLoginScene" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@image/back-button.png"/>

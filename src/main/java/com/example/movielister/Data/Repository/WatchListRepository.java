@@ -79,6 +79,25 @@ public class WatchListRepository implements Dao<WatchList> {
         return null;
     }
 
+    public WatchList getByUserIDAndMovieId(int movieID, int userID) {
+        String query = String.format("SELECT * FROM watchlist_tbl WHERE movieID = %d AND userID = %d", movieID, userID);
+        ResultSet resultSet = DBUtil.dbExecuteQuery(query);
+        try {
+            if (resultSet.next()) {
+                return (new WatchList(
+                        resultSet.getInt(1),
+                        resultSet.getInt(2),
+                        resultSet.getInt(3),
+                        resultSet.getInt(4)
+                ));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
     public ObservableList<WatchList> getAllByUserID(int id) {
         ObservableList<WatchList> watchLists = FXCollections.observableArrayList();
         String query = String.format("SELECT * FROM watchlist_tbl WHERE userID = %d", id);
@@ -100,7 +119,8 @@ public class WatchListRepository implements Dao<WatchList> {
 
     public ObservableList<WatchListDetail> getAllDetailByUserID(int id) {
         ObservableList<WatchListDetail> watchListDetails = FXCollections.observableArrayList();
-        String query = String.format("SELECT w.listID,m.title, case when r.rate is null then 0 else r.rate end as rate,w.status from watchlist_tbl w LEFT JOIN rate_tbl r on w.userID = r.userID LEFT JOIN movie_tbl m on w.movieID = m.movieID WHERE w.userID = %d", id);
+        String query = String.format("SELECT DISTINCT w.listID,m.title,CASE WHEN r.rate IS NULL THEN 0 ELSE r.rate END AS rate,w.status FROM movie_tbl m INNER JOIN watchlist_tbl w ON m.movieID = w.movieID AND w.userID = %d" +
+                "LEFT JOIN rate_tbl r ON w.movieID = r.movieID", id);
         ResultSet resultSet = DBUtil.dbExecuteQuery(query);
         try {
             while (resultSet.next()) {

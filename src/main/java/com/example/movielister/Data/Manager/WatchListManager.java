@@ -34,7 +34,7 @@ public class WatchListManager {
     }
 
     public void deleteWatchList(WatchList watchList) {
-        boolean okay = FXAlert.showConfirmed(watchList.getListID()+" silenecek onaylıyor musunuz?");
+        boolean okay = FXAlert.showConfirmed("Film izleme listenizden silenecek onaylıyor musunuz?");
         if (okay) {
             watchListRepository.delete(watchList);
         }
@@ -65,12 +65,11 @@ public class WatchListManager {
         return null;
     }
 
-    public ObservableList<WatchList> getAllByUserID(int id) {
-        ObservableList<WatchList> watchList = watchListRepository.getAllByUserID(id);
+    public WatchList getByUserIDAndMovieId(int movieID, int userID) {
+        WatchList watchList = watchListRepository.getByUserIDAndMovieId(movieID, userID);
         if (watchList != null) {
             return watchList;
         }
-        FXAlert.showWarning("İzleme listeniz boş durumda.");
         return null;
     }
 

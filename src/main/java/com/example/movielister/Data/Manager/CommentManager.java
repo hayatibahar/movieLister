@@ -4,6 +4,7 @@ import com.example.movielister.Data.Repository.CommentRepository;
 import com.example.movielister.Data.Repository.MovieRepository;
 import com.example.movielister.Data.Repository.UserRepository;
 import com.example.movielister.Model.Comment;
+import com.example.movielister.Model.Dto.CommentDetail;
 import com.example.movielister.Model.User;
 import com.example.movielister.util.FXAlert;
 import javafx.collections.ObservableList;
@@ -26,8 +27,9 @@ public class CommentManager {
     public void addComment(Comment comment) {
         if (!commentControl(comment)) {
             commentRepository.insert(comment);
+            FXAlert.showInfo("Yorum eklendi.");
         } else {
-            FXAlert.showWarning("Yorum kayıt edilemedi!");
+            FXAlert.showWarning("Yorum kayıt edilemedi! Sınır aşılmış olabilir.");
         }
     }
 
@@ -64,14 +66,24 @@ public class CommentManager {
         return null;
     }
 
-    public ObservableList<Comment> getByTitle(int id) {
+    public ObservableList<CommentDetail> getDetailsByMovieID(int id) {
+        ObservableList<CommentDetail> commentDetails = commentRepository.getDetailsByMovieID(id);
+        if (commentDetails != null) {
+            return commentDetails;
+        }
+        FXAlert.showWarning("Yorumlar getirelemedi!");
+        return null;
+    }
+
+    public ObservableList<Comment> getByMovieID(int id) {
         return commentRepository.getByMovieId(id);
     }
 
     public boolean commentControl(Comment comment) {
         return comment.getCommentDate() == null || comment.getUserComment() == null || comment.getTitle() == null
                 || movieManager.getMovieById(comment.getMovieID()) == null
-                || userManager.getUserById(comment.getUserID()) == null;
+                || userManager.getUserById(comment.getUserID()) == null
+                || comment.getTitle().length() >= 100 || comment.getUserComment().length() >= 1000;
     }
 
 }

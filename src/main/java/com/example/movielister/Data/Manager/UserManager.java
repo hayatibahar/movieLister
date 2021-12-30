@@ -37,8 +37,9 @@ public class UserManager {
     }
 
     public void updateUser(User user) {
-        if (!userControl(user)) {
+        if (!userUpdateControl(user)) {
             userRepository.update(user);
+            FXAlert.showInfo("Kullanıcı bilgileri güncellendi!");
         } else {
             FXAlert.showWarning("Kullanıcı güncellenemedi! Boş alan bırakmayın. Eğer boş alan yok ise farklı bir kullanıcı adı girin.");
         }
@@ -73,6 +74,11 @@ public class UserManager {
         return user.getNickname() == null || user.getPass() == null || user.getPass().equals("") || user.getNickname().equals("")
                 || userTypeManager.getUserTypeById(user.getUserTypeID()) == null
                 || userRepository.exists(user);
+    }
+
+    public boolean userUpdateControl(User user) {
+        return user.getNickname() == null || user.getPass() == null || user.getPass().equals("") || user.getNickname().equals("")
+                || userTypeManager.getUserTypeById(user.getUserTypeID()) == null;
     }
 
 }
