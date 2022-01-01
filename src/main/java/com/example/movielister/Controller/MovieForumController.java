@@ -95,6 +95,7 @@ public class MovieForumController extends BaseController implements Initializabl
     private WatchList watchList;
     private Rate rate;
     private int yourRate;
+    private boolean isRateChanged;
 
     @FXML
     void addWatchList(MouseEvent event) {
@@ -132,11 +133,11 @@ public class MovieForumController extends BaseController implements Initializabl
         if (!rb_watch.isSelected() && !rb_watched.isSelected() && watchList != null) {
             watchListManager.deleteWatchList(watchList);
         }
-        if (rate != null) {
+        if (rate != null && isRateChanged) {
             rate.setRate(yourRate);
             rateManager.updateRate(rate);
         } else {
-            if (yourRate != 0) {
+            if (yourRate != 0 && isRateChanged) {
                 rateManager.addRate(new Rate(
                         DataPassController.user.getUserID(),
                         DataPassController.movie.getMovieID(),
@@ -157,6 +158,9 @@ public class MovieForumController extends BaseController implements Initializabl
                     ta_comment.getText(),
                     new Timestamp(System.currentTimeMillis()).toLocalDateTime().toLocalDate().format(DateTimeFormatter.ofPattern("dd-MMM-yyyy"))
             ));
+            commentDetails = commentManager.getDetailsByMovieID(DataPassController.movie.getMovieID());
+            items.getItems().clear();
+            items.getItems().addAll(commentDetails);
         } else {
             FXAlert.showInfo("Başlık ve yorum alanlarını eksiksiz giriniz.");
         }
@@ -178,6 +182,7 @@ public class MovieForumController extends BaseController implements Initializabl
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        isRateChanged = false;
         watchList = watchListManager.getByUserIDAndMovieId(DataPassController.movie.getMovieID(), DataPassController.user.getUserID());
         rate = rateManager.getByUserIDAndMovieId(DataPassController.movie.getMovieID(), DataPassController.user.getUserID());
         country = countryManager.getCountryById(DataPassController.movie.getCountryID());
@@ -216,6 +221,7 @@ public class MovieForumController extends BaseController implements Initializabl
         slider_yourRate.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                isRateChanged = true;
                 yourRate = t1.intValue();
                 lbl_yourRate.setText("Your rate: " + yourRate);
             }
