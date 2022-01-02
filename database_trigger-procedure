@@ -29,17 +29,16 @@ BEGIN
     Update movie_tbl SET rate = vTotalRate, rateCount = vRateCount +1 where movieID = movie;
 END;
 
-
 create or replace NONEDITIONABLE TRIGGER COMMENT_TRIGGER 
 AFTER INSERT OR DELETE ON COMMENT_TBL 
 REFERENCING OLD AS OLD NEW AS NEW 
 FOR EACH ROW
 BEGIN
     IF INSERTING THEN
-    UPDATE movie_tbl SET commentCount = commentCount + 1 where movieID = :NEW.movieID;
+        UPDATE movie_tbl SET commentCount = commentCount + 1 where movieID = :NEW.movieID;
     end if;
     
     IF DELETING THEN
-    UPDATE movie_tbl SET commentCount = commentCount - 1 where movieID = :NEW.movieID;
+        UPDATE movie_tbl SET commentCount = commentCount - 1 where movieID = :OLD.movieID;
     end if;    
 END;
