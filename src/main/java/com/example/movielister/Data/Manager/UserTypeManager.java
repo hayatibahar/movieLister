@@ -1,6 +1,5 @@
 package com.example.movielister.Data.Manager;
 
-import com.example.movielister.Data.Repository.CommonRepository;
 import com.example.movielister.Data.Repository.UserTypeRepository;
 import com.example.movielister.Model.User;
 import com.example.movielister.Model.UserType;

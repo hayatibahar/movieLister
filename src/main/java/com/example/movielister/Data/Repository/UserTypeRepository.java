@@ -2,7 +2,6 @@ package com.example.movielister.Data.Repository;
 
 import com.example.movielister.Data.DBUtil;
 import com.example.movielister.Data.Dao.Dao;
-import com.example.movielister.Model.User;
 import com.example.movielister.Model.UserType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

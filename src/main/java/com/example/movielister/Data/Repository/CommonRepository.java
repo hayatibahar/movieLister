@@ -1,7 +1,6 @@
 package com.example.movielister.Data.Repository;
 
 import com.example.movielister.Data.DBUtil;
-import com.example.movielister.Model.User;
 
 import java.sql.ResultSet;
 
