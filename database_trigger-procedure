@@ -1,0 +1,44 @@
+create or replace NONEDITIONABLE TRIGGER rate_triggger
+AFTER INSERT OR UPDATE OF RATE ON rate_tbl
+REFERENCING OLD AS OLD NEW AS NEW
+FOR EACH ROW
+BEGIN
+    IF INSERTING THEN
+        CALCULATERATE_PROC(:NEW.RATE,:NEW.movieID);
+    end if;
+    IF UPDATING THEN
+        UPDATERATE_PROC(:NEW.RATE,:NEW.movieID);
+    end if;
+END;
+
+create or replace NONEDITIONABLE PROCEDURE UPDATERATE_PROC(newRate number, movie number) AS
+vTotalRate double precision;
+vRateCount int;
+BEGIN
+    SELECT rate,rateCount into vTotalRate,vRateCount from movie_tbl where movieID = movie;
+    vTotalRate := (vTotalRate * vRateCount + newRate) / (vRateCount+1);
+    Update movie_tbl set rate = vTotalRate where movieID = movie;
+END;
+
+create or replace NONEDITIONABLE PROCEDURE CALCULATERATE_PROC(newRate number, movie number) AS
+vTotalRate double precision;
+vRateCount int;
+BEGIN
+    select rate,rateCount into vTotalRate,vRateCount from movie_tbl where movieID = movie;
+    vTotalRate := (vTotalRate * vRateCount + newRate) / (vRateCount+1);
+    Update movie_tbl SET rate = vTotalRate, rateCount = vRateCount +1 where movieID = movie;
+END;
+
+create or replace NONEDITIONABLE TRIGGER COMMENT_TRIGGER 
+AFTER INSERT OR DELETE ON COMMENT_TBL 
+REFERENCING OLD AS OLD NEW AS NEW 
+FOR EACH ROW
+BEGIN
+    IF INSERTING THEN
+        UPDATE movie_tbl SET commentCount = commentCount + 1 where movieID = :NEW.movieID;
+    end if;
+    
+    IF DELETING THEN
+        UPDATE movie_tbl SET commentCount = commentCount - 1 where movieID = :OLD.movieID;
+    end if;    
+END;

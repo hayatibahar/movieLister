@@ -1,0 +1,102 @@
+create table USER_TBL
+(
+    userID     NUMBER generated as identity
+        constraint USER_TBL_PK
+            primary key,
+    nickname     VARCHAR2(25) not null,
+    pass        VARCHAR2(50) not null,
+    userTypeID NUMBER       not null
+        constraint USERTYPE_TBL_FK
+            references USERTYPE_TBL
+                on delete set null
+);
+
+create unique index USER_TBL_NICKNAME_UINDEX
+    on "USER_TBL" (nickname);
+    
+create table USERTYPE_TBL(
+    userTypeID NUMBER generated as identity
+        constraint USERTYPE_PK
+            primary key,
+    info varchar2(25) not null
+);
+
+Create table DIRECTOR_TBL(
+ directorID NUMBER generated as identity
+        constraint DIRECTOR_TBL_PK
+            primary key,
+ director varchar2(100) not null unique
+);
+
+Create table COUNTRY_TBL(
+ countryID NUMBER generated as identity
+        constraint COUNTRY_TBL_PK
+            primary key,
+ country varchar2(100) not null unique
+);
+
+
+create table WATCHLIST_TBL
+(
+	listID int generated as identity
+		constraint WATCHLIST_TBL_PK
+			primary key,
+	userID int not null
+		constraint WATCHLIST_TBL_FK
+			references USER_TBL
+				on delete set null,
+	movieID int not null,
+	status int not null
+);
+
+create table MOVIE_TBL(
+     movieID  NUMBER generated as identity
+        constraint MOVIE_TBL_PK
+            primary key,
+    title    VARCHAR2(100)  not null,
+    movieYear     int         not null,
+    released DATE           not null,
+    runtime  VARCHAR2(20)   not null,
+    genre    VARCHAR2(100)  not null,
+    directorID int not null constraint MOVIE_TBL_FK
+			references DIRECTOR_TBL
+				on delete set null,
+    plot     VARCHAR2(3000) not null,
+    countryID  int not null constraint MOVIE_TBL_FK2
+			references COUNTRY_TBL
+				on delete set null,
+    awards   VARCHAR2(500)  not null,
+    poster   VARCHAR2(500)  not null,
+    rate double precision not null,
+    rateCount int not null,
+    commentCount int not null
+);
+  
+    
+create table comment_tbl(
+commentID NUMBER generated as identity
+        constraint COMMENT_TBL_PK
+            primary key,
+userID int not null constraint COMMENT_TBL_FK
+			references USER_TBL
+				on delete set null,
+movieID int not null constraint COMMENT_TBL_FK2
+			references MOVIE_TBL
+				on delete set null,
+title varchar2(100) not null,
+userComment varchar2(1000) not null,
+commentDate date not null);
+
+
+create table rate_tbl(
+rateID NUMBER generated as identity
+        constraint RATE_TBL_PK
+            primary key,
+userID int not null constraint RATE_TBL_FK
+			references USER_TBL
+				on delete set null,
+movieID int not null constraint RATE_TBL_FK2
+			references MOVIE_TBL
+				on delete set null,
+rate int not null);
+
