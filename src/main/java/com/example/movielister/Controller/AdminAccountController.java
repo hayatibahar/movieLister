@@ -62,7 +62,7 @@ public class AdminAccountController extends BaseController implements Initializa
 
     @FXML
     void openUserTypeScene(MouseEvent event) {
-
+        openStage(event, "adminUserType-view.fxml");
     }
 
     @FXML
