@@ -45,7 +45,10 @@ create table WATCHLIST_TBL
 		constraint WATCHLIST_TBL_FK
 			references USER_TBL
 				on delete set null,
-	movieID int not null,
+	movieID int not null 
+    constraint WATCHLIST_TBL_FK2
+        references MOVIE_TBL
+            on delete set null,
 	status int not null
 );
 
