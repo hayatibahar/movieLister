@@ -119,8 +119,8 @@ public class WatchListRepository implements Dao<WatchList> {
 
     public ObservableList<WatchListDetail> getAllDetailByUserID(int id) {
         ObservableList<WatchListDetail> watchListDetails = FXCollections.observableArrayList();
-        String query = String.format("SELECT DISTINCT w.listID,m.title,CASE WHEN r.rate IS NULL THEN 0 ELSE r.rate END AS rate,w.status FROM movie_tbl m INNER JOIN watchlist_tbl w ON m.movieID = w.movieID AND w.userID = %d" +
-                "LEFT JOIN rate_tbl r ON w.movieID = r.movieID", id);
+        String query = String.format("SELECT DISTINCT w.listID,m.title,CASE WHEN r.rate IS NULL THEN 0 ELSE r.rate END AS rate,w.status FROM movie_tbl m INNER JOIN watchlist_tbl w ON m.movieID = w.movieID AND w.userID = %d " +
+                "LEFT JOIN rate_tbl r ON w.movieID = r.movieID and r.userID = %d", id, id);
         ResultSet resultSet = DBUtil.dbExecuteQuery(query);
         try {
             while (resultSet.next()) {

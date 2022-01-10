@@ -28,8 +28,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class HomePageController extends BaseController implements Initializable {
 
@@ -110,15 +113,19 @@ public class HomePageController extends BaseController implements Initializable 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<String> genres = Arrays.asList("Drama", "Crime", "Action",
+                "Biography", "History", "Adventure", "Western", "Romance",
+                "Sci-Fi", "Fantasy", "Thriller", "Animation", "Thriller",
+                "Comedy", "Music", "Mystery", "Horror", "War", "Film-Noir");
         movieManager = new MovieManager(new MovieRepository());
         movies = movieManager.getAllMovie();
         directors = directorManager.getAllDirector();
         Adapter adapter = new Adapter();
         items.setAdapter(adapter);
         items.getItems().addAll(movies);
-        cb_genre.setItems(FXCollections.observableArrayList(movies.stream().map(movie -> movie.getGenre()).distinct().sorted().collect(Collectors.toList())));
+        cb_genre.setItems(FXCollections.observableArrayList(genres));
         cb_year.setItems(FXCollections.observableArrayList(movies.stream().map(movie -> movie.getMovieYear()).distinct().sorted().collect(Collectors.toList())));
-        cb_rate.setItems(FXCollections.observableArrayList(movies.stream().map(movie -> movie.getRate()).distinct().sorted().collect(Collectors.toList())));
+        cb_rate.setItems(FXCollections.observableArrayList(IntStream.rangeClosed(0, 10).boxed().collect(Collectors.toList())));
 
     }
 

@@ -46,11 +46,8 @@ public class DBUtil {
         try {
             dbConnect();
             System.out.println("Select statement: " + queryStmt + "\n");
-
             stmt = conn.createStatement();
-
             resultSet = stmt.executeQuery(queryStmt);
-
             crs = RowSetProvider.newFactory().createCachedRowSet();
             crs.populate(resultSet);
         } catch (SQLException e) {

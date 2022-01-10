@@ -46,8 +46,8 @@ public class MovieRepository implements Dao<Movie> {
                         "poster,rate,ratecount,commentcount) " +
                         "values ('%s',%d,'%s','%s','%s',%d,'%s',%d,'%s','%s',%f,%d,%d)",
                 movie.getTitle(), movie.getMovieYear(), movie.getReleased(), movie.getRuntime(), movie.getGenre(),
-                movie.getDirectorID(), movie.getPlot(), movie.getCountryID(), movie.getAwards(), movie.getPoster(), movie.getRate(),
-                movie.getRateCount(), movie.getCommentCount());
+                movie.getDirectorID(), movie.getPlot(), movie.getCountryID(), movie.getAwards(), movie.getPoster(),
+                movie.getRate(), movie.getRateCount(), movie.getCommentCount());
         DBUtil.dbExecuteUpdate(query);
     }
 
@@ -58,8 +58,8 @@ public class MovieRepository implements Dao<Movie> {
                         "directorID = %d,plot = '%s',countryID = %d,awards = '%s',poster = '%s'," +
                         "rate = %f,ratecount = %d,commentcount = %d WHERE movieID = %d",
                 movie.getTitle(), movie.getMovieYear(), movie.getReleased(), movie.getRuntime(), movie.getGenre(),
-                movie.getDirectorID(), movie.getPlot(), movie.getCountryID(), movie.getAwards(), movie.getPoster(), movie.getRate(),
-                movie.getRateCount(), movie.getCommentCount(), movie.getMovieID());
+                movie.getDirectorID(), movie.getPlot(), movie.getCountryID(), movie.getAwards(), movie.getPoster(),
+                movie.getRate(), movie.getRateCount(), movie.getCommentCount(), movie.getMovieID());
 
         DBUtil.dbExecuteUpdate(query);
     }
@@ -138,7 +138,7 @@ public class MovieRepository implements Dao<Movie> {
 
     public ObservableList<Movie> get(String genre, int year, Double rate) {
         ObservableList<Movie> movies = FXCollections.observableArrayList();
-        String query = String.format("SELECT * FROM movie_tbl WHERE genre = '%s' and movieYear >= %d and rate >= %f", genre, year, rate);
+        String query = "SELECT * FROM movie_tbl WHERE genre like '%" + genre + "%' and movieYear >= " + year + " and rate >= " + rate;
         ResultSet resultSet = DBUtil.dbExecuteQuery(query);
         try {
             while (resultSet.next()) {
